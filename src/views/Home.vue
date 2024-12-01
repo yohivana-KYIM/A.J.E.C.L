@@ -1,5 +1,7 @@
 <template>
   <div>
+<br/>
+<br/>
     <HeroSection />
     <AboutSection />
     <StatsSection />

@@ -1,67 +1,552 @@
 <template>
-  <body class="index-page">
-    <header id="header" class="header d-flex align-items-center sticky-top">
-      <div
-        class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between"
-      >
-        <a href="index.html" class="logo d-flex align-items-center">
+  <header 
+    :class="['main-header', {'scrolled': isScrolled}]"
+    v-show="!isSectionHidden"
+  >
+    <div class="header-container">
+      <div class="logo-container">
+        <a href="/" class="logo-link">
           <img
             src="/assets/img/lyon.png"
-            alt=""
-            style="max-width: 200px; height: auto"
+            alt="AEJC Lyon Logo"
+            class="logo-image"
           />
-
-          <!-- Uncomment the line below if you also wish to use text logo -->
-          <!-- <h1 class="sitename">Butterfly</h1>  -->
         </a>
-
-        <nav id="navmenu" class="navmenu">
-          <ul>
-            <li><a href="#hero" class="active">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#team">Team</a></li>
-            <li class="dropdown">
-              <a href="#"
-                ><span>Dropdown</span>
-                <i class="bi bi-chevron-down toggle-dropdown"></i
-              ></a>
-              <ul>
-                <li><a href="#">Dropdown 1</a></li>
-                <li class="dropdown">
-                  <a href="#"
-                    ><span>Deep Dropdown</span>
-                    <i class="bi bi-chevron-down toggle-dropdown"></i
-                  ></a>
-                  <ul>
-                    <li><a href="#">Deep Dropdown 1</a></li>
-                    <li><a href="#">Deep Dropdown 2</a></li>
-                    <li><a href="#">Deep Dropdown 3</a></li>
-                    <li><a href="#">Deep Dropdown 4</a></li>
-                    <li><a href="#">Deep Dropdown 5</a></li>
-                  </ul>
-                </li>
-                <li><a href="#">Dropdown 2</a></li>
-                <li><a href="#">Dropdown 3</a></li>
-                <li><a href="#">Dropdown 4</a></li>
-              </ul>
-            </li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-        </nav>
       </div>
-    </header>
-  </body>
+
+      <!-- Navigation Desktop -->
+      <nav class="nav-desktop" :class="{ 'nav-visible': isMenuOpen }">
+        <ul class="nav-list">
+          <li v-for="(item, index) in menuItems" :key="index" class="nav-item">
+            <template v-if="!item.children">
+              <a 
+                :href="item.href" 
+                :class="['nav-link', { 'active': activeSection === item.href }]"
+                @click="handleNavClick(item.href)"
+              >
+                {{ item.label }}
+              </a>
+            </template>
+            
+            <template v-else>
+              <div 
+                class="dropdown-trigger"
+                @mouseenter="handleDropdownHover(index)"
+                @mouseleave="handleDropdownLeave(index)"
+              >
+                <span>{{ item.label }}</span>
+                <i :class="['dropdown-icon', { 'rotated': openDropdowns.includes(index) }]">
+                  <svg width="10" height="6" viewBox="0 0 10 6">
+                    <path d="M1 1L5 5L9 1" stroke="currentColor" fill="none" stroke-width="2"/>
+                  </svg>
+                </i>
+                
+                <ul :class="['dropdown-menu', { 'show': openDropdowns.includes(index) }]">
+                  <li v-for="(child, childIndex) in item.children" :key="childIndex">
+                    <a :href="child.href" class="dropdown-link">{{ child.label }}</a>
+                  </li>
+                </ul>
+              </div>
+            </template>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Mobile Menu Toggle -->
+      <button 
+        class="mobile-toggle"
+        :class="{ 'active': isMenuOpen }"
+        @click="toggleMenu"
+        aria-label="Toggle Menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Mobile Navigation -->
+      <div :class="['nav-mobile', { 'show': isMenuOpen }]">
+        <div class="mobile-menu-container">
+          <ul class="mobile-nav-list">
+            <li v-for="(item, index) in menuItems" :key="index" class="mobile-nav-item">
+              <template v-if="!item.children">
+                <a 
+                  :href="item.href" 
+                  class="mobile-nav-link"
+                  @click="handleMobileNavClick(item.href)"
+                >
+                  {{ item.label }}
+                </a>
+              </template>
+              
+              <template v-else>
+                <div class="mobile-dropdown">
+                  <button 
+                    class="mobile-dropdown-trigger"
+                    @click="toggleMobileDropdown(index)"
+                  >
+                    {{ item.label }}
+                    <i :class="['dropdown-icon', { 'rotated': openMobileDropdowns.includes(index) }]">
+                      <svg width="10" height="6" viewBox="0 0 10 6">
+                        <path d="M1 1L5 5L9 1" stroke="currentColor" fill="none" stroke-width="2"/>
+                      </svg>
+                    </i>
+                  </button>
+                  
+                  <transition name="slide">
+                    <ul v-if="openMobileDropdowns.includes(index)" class="mobile-dropdown-menu">
+                      <li v-for="(child, childIndex) in item.children" :key="childIndex">
+                        <a 
+                          :href="child.href" 
+                          class="mobile-dropdown-link"
+                          @click="handleMobileNavClick(child.href)"
+                        >
+                          {{ child.label }}
+                        </a>
+                      </li>
+                    </ul>
+                  </transition>
+                </div>
+              </template>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
 </template>
 
 <script>
 export default {
   name: "Header",
+  data() {
+    return {
+      isScrolled: false,
+      isMenuOpen: false,
+      isSectionHidden: false,
+      activeSection: "#hero",
+      openDropdowns: [],
+      openMobileDropdowns: [],
+      lastScrollPosition: 0,
+      menuItems: [
+        { label: "Accueil", href: "#hero" },
+        { label: "À propos", href: "#about" },
+        { label: "Services", href: "#services" },
+        { label: "Portfolio", href: "#portfolio" },
+        { label: "Équipe", href: "#team" },
+        {
+          label: "Plus",
+          children: [
+            { label: "Actualités", href: "#news" },
+            { label: "Événements", href: "#events" },
+            { label: "Galerie", href: "#gallery" },
+            { label: "FAQ", href: "#faq" }
+          ]
+        },
+        { label: "Contact", href: "#contact" }
+      ]
+    };
+  },
+  mounted() {
+    window.addEventListener('scroll', this.handleScroll);
+    this.handleScroll();
+  },
+  beforeUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  },
+  methods: {
+    handleScroll() {
+      const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+      
+      // Handle header visibility on scroll
+      this.isScrolled = currentScrollPosition > 50;
+      
+      // Hide header when scrolling down, show when scrolling up
+      if (currentScrollPosition < 0) {
+        return;
+      }
+      
+      if (Math.abs(currentScrollPosition - this.lastScrollPosition) < 60) {
+        return;
+      }
+      
+      this.isSectionHidden = currentScrollPosition > this.lastScrollPosition;
+      this.lastScrollPosition = currentScrollPosition;
+    },
+    toggleMenu() {
+      this.isMenuOpen = !this.isMenuOpen;
+      document.body.style.overflow = this.isMenuOpen ? 'hidden' : '';
+    },
+    handleDropdownHover(index) {
+      if (!this.openDropdowns.includes(index)) {
+        this.openDropdowns.push(index);
+      }
+    },
+    handleDropdownLeave(index) {
+      this.openDropdowns = this.openDropdowns.filter(i => i !== index);
+    },
+    toggleMobileDropdown(index) {
+      if (this.openMobileDropdowns.includes(index)) {
+        this.openMobileDropdowns = this.openMobileDropdowns.filter(i => i !== index);
+      } else {
+        this.openMobileDropdowns.push(index);
+      }
+    },
+    handleNavClick(href) {
+      this.activeSection = href;
+      this.isMenuOpen = false;
+      document.body.style.overflow = '';
+    },
+    handleMobileNavClick(href) {
+      this.handleNavClick(href);
+      this.openMobileDropdowns = [];
+    }
+  }
 };
 </script>
 
 <style scoped>
-/* Ajoutez vos styles ici */
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  transform: translateY(0);
+}
+
+.main-header.scrolled {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo Styles */
+.logo-container {
+  flex-shrink: 0;
+}
+
+.logo-link {
+  display: block;
+}
+
+.logo-image {
+  width: auto;
+  height: 80px;
+  transition: height 0.3s ease;
+}
+
+.scrolled .logo-image {
+  height: 70px;
+}
+
+/* Desktop Navigation */
+.nav-desktop {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-link {
+  color: #1a365d;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #22c55e;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  transform: scaleX(1);
+}
+
+/* Dropdown Styles */
+.dropdown-trigger {
+  position: relative;
+  cursor: pointer;
+  padding: 0.5rem 0;
+}
+
+.dropdown-icon {
+  display: inline-block;
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.dropdown-icon.rotated {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: -1rem;
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  min-width: 200px;
+  padding: 0.5rem 0;
+}
+
+.dropdown-menu.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-link {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: #1a365d;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-link:hover {
+  background-color: #f7fafc;
+  color: #22c55e;
+}
+
+/* Mobile Menu Toggle */
+.mobile-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+}
+
+.mobile-toggle span {
+  width: 100%;
+  height: 2px;
+  background-color: #1a365d;
+  transition: all 0.3s ease;
+}
+
+.mobile-toggle.active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.mobile-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-toggle.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Modifiez uniquement la partie des styles du menu mobile dans le <style> */
+
+/* Mobile Navigation */
+.nav-mobile {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.8); /* Fond transparent */
+  backdrop-filter: blur(10px); /* Effet de flou */
+  -webkit-backdrop-filter: blur(10px); /* Support Safari */
+  padding-top: 100px;
+  transform: translateX(100%);
+  transition: all 0.3s ease;
+  overflow-y: auto;
+  z-index: 999;
+}
+
+.nav-mobile.show {
+  transform: translateX(0);
+}
+
+.mobile-menu-container {
+  padding: 2rem;
+  background: transparent;
+}
+
+.mobile-nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-nav-item {
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+.mobile-nav-link {
+  display: block;
+  padding: 1rem;
+  color: #1a365d;
+  text-decoration: none;
+  font-size: 1.125rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
+}
+
+.mobile-nav-link:hover {
+  background: rgba(255, 255, 255, 0.8);
+  transform: translateX(5px);
+}
+
+.mobile-dropdown-trigger {
+  width: 100%;
+  text-align: left;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
+  border: none;
+  border-radius: 8px;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #1a365d;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mobile-dropdown-trigger:hover {
+  background: rgba(255, 255, 255, 0.8);
+  transform: translateX(5px);
+}
+
+.mobile-dropdown-menu {
+  padding-left: 1rem;
+  list-style: none;
+  margin-top: 0.5rem;
+}
+
+.mobile-dropdown-link {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: #1a365d;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
+  margin-bottom: 0.5rem;
+}
+
+.mobile-dropdown-link:hover {
+  background: rgba(255, 255, 255, 0.6);
+  transform: translateX(5px);
+}
+
+/* Animation pour le menu déroulant mobile */
+.slide-enter-active,
+.slide-leave-active {
+  transition: all 0.3s ease;
+  max-height: 400px;
+  opacity: 1;
+}
+
+.slide-enter-from,
+.slide-leave-to {
+  opacity: 0;
+  max-height: 0;
+  transform: translateX(-10px);
+}
+
+/* Ajustements pour le bouton toggle */
+.mobile-toggle {
+  position: relative;
+  z-index: 1000;
+}
+
+.mobile-toggle span {
+  transition: all 0.3s ease;
+}
+
+.mobile-toggle.active span {
+  background-color: #1a365d; /* Couleur des traits quand le menu est ouvert */
+}
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .nav-desktop {
+    display: none;
+  }
+
+  .mobile-toggle {
+    display: flex;
+  }
+
+  .nav-mobile {
+    display: block;
+  }
+
+  .header-container {
+    padding: 0.5rem 1rem;
+  }
+
+  .logo-image {
+    height: 60px;
+  }
+
+  .scrolled .logo-image {
+    height: 50px;
+  }
+}
+
+@media (max-width: 640px) {
+  .logo-image {
+    height: 50px;
+  }
+
+  .scrolled .logo-image {
+    height: 40px;
+  }
+
+  .mobile-nav-link,
+  .mobile-dropdown-trigger {
+    font-size: 1rem;
+    padding: 0.75rem;
+  }
+}
 </style>
