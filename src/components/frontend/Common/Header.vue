@@ -179,17 +179,17 @@ export default {
         { label: "Accueil", href: "#hero" },
         { label: "À propos", href: "#about" },
         { label: "Services", href: "#services" },
-        { label: "Portfolio", href: "#portfolio" },
+        { label: "Evenements", href: "#portfolio" },
         { label: "Équipe", href: "#team" },
-        {
-          label: "Plus",
-          children: [
-            { label: "Actualités", href: "#news" },
-            { label: "Événements", href: "#events" },
-            { label: "Galerie", href: "#gallery" },
-            { label: "FAQ", href: "#faq" },
-          ],
-        },
+        // {
+        //   label: "Plus",
+        //   children: [
+        //     { label: "Actualités", href: "#news" },
+        //     { label: "Événements", href: "#events" },
+        //     { label: "Galerie", href: "#gallery" },
+        //     { label: "FAQ", href: "#faq" },
+        //   ],
+        // },
         { label: "Contact", href: "#contact" },
       ],
     };

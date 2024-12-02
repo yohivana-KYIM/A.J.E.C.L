@@ -2,100 +2,140 @@
   <section id="services" class="services section light-background">
     <div class="container section-title" data-aos="fade-up">
       <h2>Services</h2>
-
       <div class="title-underline d-flex justify-content-center">
         <div class="green-line me-2 line-animated"></div>
         <div class="red-line me-2 line-animated"></div>
         <div class="yellow-line line-animated"></div>
       </div>
-      <p>
-        Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
-        consectetur velit
-      </p>
+      <p>Quelques Services de l'A.E.J.C</p>
     </div>
     <div class="container">
       <div class="row gy-4">
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <div
+          class="col-lg-4 col-md-6 col-sm-12"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
           <div class="service-item position-relative">
             <div class="icon">
-              <i class="bi bi-cash-stack" style="color: #0dcaf0"></i>
+              <i
+                class="fas fa-info-circle"
+                style="color: #28a745; font-size: 2rem"
+              ></i>
             </div>
             <a href="service-details.html" class="stretched-link">
-              <h3>Nesciunt Mete</h3>
+              <h3>Centre d’information et d’accueil</h3>
             </a>
             <p>
-              Provident nihil minus qui consequatur non omnis maiores. Eos
-              accusantium minus dolores iure perferendis tempore et consequatur.
+              Fournir un espace dédié à l’orientation des nouveaux arrivants,
+              avec des ressources sur la vie lyonnaise et les services locaux.
             </p>
           </div>
         </div>
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <div
+          class="col-lg-4 col-md-6 col-sm-12"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
           <div class="service-item position-relative">
             <div class="icon">
-              <i class="bi bi-calendar4-week" style="color: #fd7e14"></i>
+              <i
+                class="fas fa-chalkboard-teacher"
+                style="color: #fd7e14; font-size: 2rem"
+              ></i>
             </div>
             <a href="service-details.html" class="stretched-link">
-              <h3>Eosle Commodi</h3>
+              <h3>Ateliers de formation</h3>
             </a>
             <p>
-              Ut autem aut autem non a. Sint sint sit facilis nam iusto sint.
-              Libero corrupti neque eum hic non ut nesciunt dolorem.
+              Proposer des sessions pratiques sur des thèmes variés (emploi,
+              entrepreneuriat, gestion de projet) pour renforcer les compétences
+              des membres.
             </p>
           </div>
         </div>
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+        <div
+          class="col-lg-4 col-md-6 col-sm-12"
+          data-aos="fade-up"
+          data-aos-delay="300"
+        >
           <div class="service-item position-relative">
             <div class="icon">
-              <i class="bi bi-chat-text" style="color: #20c997"></i>
+              <i
+                class="fas fa-theater-masks"
+                style="color: #20c997; font-size: 2rem"
+              ></i>
             </div>
             <a href="service-details.html" class="stretched-link">
-              <h3>Ledo Markt</h3>
+              <h3>Organisation d’événements culturels</h3>
             </a>
             <p>
-              Ut excepturi voluptatem nisi sed. Quidem fuga consequatur. Minus
-              ea aut. Vel qui id voluptas adipisci eos earum corrupti.
+              Mettre en place des activités pour promouvoir la culture
+              camerounaise auprès de la communauté et du grand public.
             </p>
           </div>
         </div>
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+        <div
+          class="col-lg-4 col-md-6 col-sm-12"
+          data-aos="fade-up"
+          data-aos-delay="400"
+        >
           <div class="service-item position-relative">
             <div class="icon">
-              <i class="bi bi-credit-card-2-front" style="color: #df1529"></i>
+              <i
+                class="fas fa-user-friends"
+                style="color: #df1529; font-size: 2rem"
+              ></i>
             </div>
             <a href="service-details.html" class="stretched-link">
-              <h3>Asperiores Commodit</h3>
+              <h3>Réseau de mentorat</h3>
             </a>
             <p>
-              Non et temporibus minus omnis sed dolor esse consequatur.
-              Cupiditate sed error ea fuga sit provident adipisci neque.
+              Faciliter l’accompagnement des jeunes Camerounais par des
+              professionnels expérimentés pour les guider dans leur insertion
+              sociale et professionnelle.
             </p>
           </div>
         </div>
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+        <div
+          class="col-lg-4 col-md-6 col-sm-12"
+          data-aos="fade-up"
+          data-aos-delay="500"
+        >
           <div class="service-item position-relative">
             <div class="icon">
-              <i class="bi bi-globe" style="color: #6610f2"></i>
+              <i
+                class="fas fa-hands-helping"
+                style="color: #6610f2; font-size: 2rem"
+              ></i>
             </div>
             <a href="service-details.html" class="stretched-link">
-              <h3>Velit Doloremque</h3>
+              <h3>Programme de solidarité et d’entraide</h3>
             </a>
             <p>
-              Cumque et suscipit saepe. Est maiores autem enim facilis ut aut
-              ipsam corporis aut. Sed animi at autem alias eius labore.
+              Mettre en œuvre des initiatives caritatives et des actions de
+              soutien aux membres ou à des causes locales et internationales.
             </p>
           </div>
         </div>
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+        <div
+          class="col-lg-4 col-md-6 col-sm-12"
+          data-aos="fade-up "
+          data-aos-delay="600"
+        >
           <div class="service-item position-relative">
             <div class="icon">
-              <i class="bi bi-clock" style="color: #f3268c"></i>
+              <i
+                class="fas fa-globe"
+                style="color: #17a2b8; font-size: 2rem"
+              ></i>
             </div>
             <a href="service-details.html" class="stretched-link">
-              <h3>Dolori Architecto</h3>
+              <h3>Échanges interculturels</h3>
             </a>
             <p>
-              Hic molestias ea quibusdam eos. Fugiat enim doloremque aut neque
-              non et debitis iure. Corrupti recusandae ducimus enim.
+              Organiser des rencontres et des échanges entre différentes
+              cultures pour favoriser la compréhension et l'intégration.
             </p>
           </div>
         </div>
@@ -131,5 +171,36 @@ export default {
 
 .yellow-line {
   background-color: #ffc107;
+}
+
+.services {
+  padding: 60px 0;
+}
+
+.service-item {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.service-item:hover {
+  transform: translateY(-5px);
+}
+
+.icon {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1rem;
+  color: #666;
 }
 </style>

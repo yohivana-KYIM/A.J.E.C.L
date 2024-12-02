@@ -15,7 +15,7 @@
               data-purecounter-duration="1"
               class="purecounter"
             ></span>
-            <p>Clients</p>
+            <p>Partenaires</p>
           </div>
         </div>
         <div class="col-lg-3 col-md-6">

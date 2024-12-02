@@ -3,15 +3,16 @@
   <section id="portfolio" class="portfolio section">
     <!-- Section Title -->
     <div class="container section-title" data-aos="fade-up">
-      <h2>Portfolio</h2>
+      <h2>événement</h2>
       <div class="title-underline d-flex justify-content-center">
         <div class="green-line me-2 line-animated"></div>
         <div class="red-line me-2 line-animated"></div>
         <div class="yellow-line line-animated"></div>
       </div>
       <p>
-        Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
-        consectetur velit
+        Nous sommes ravis de vous inviter à nos prochains événements à Lyon.
+        Rejoignez-nous pour des rencontres et des activités enrichissantes qui
+        célèbrent notre communauté et notre culture.
       </p>
     </div>
     <!-- End Section Title -->

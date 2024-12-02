@@ -17,7 +17,7 @@
     <div class="container" v-aos="fade - up" v-aos-delay="100">
       <div class="map-container" v-aos="fade - up" v-aos-delay="200">
         <iframe
-          src="https://www.google.com/maps/@45.7719321,4.7445967,10.94z?entry=ttu"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2886.181593370107!2d4.835659315676267!3d45.74867967910044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f4e4e0c0d4f2af%3A0x9e0f1a0b98d9c0b3!2s90%20Rue%20de%20Marseille%2C%2069007%20Lyon%2C%20France!5e0!3m2!1sen!2sfr!4v1631806971230!5m2!1sen!2sfr"
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
         ></iframe>
@@ -109,18 +109,17 @@
 
 <script setup>
 import { ref, reactive } from "vue";
-import fs from "fs"; // Ensure you have access to the fs module
 
 const contactInfo = [
   {
     icon: "bi bi-geo-alt",
     title: "Address",
-    value: "ville de Lyon (France)",
+    value: "90 Rue de Marseille, 69007 Lyon, France",
   },
   {
     icon: "bi bi-telephone",
     title: "Call Us",
-    value: "+1 5589 55488 55",
+    value: "+33 6 99 69 00 52",
   },
   {
     icon: "bi bi-envelope",
@@ -209,7 +208,7 @@ const handleSubmit = async () => {
       rgba(255, 255, 255, 0.9),
       rgba(255, 255, 255, 0.9)
     ),
-    url("@/assets/bg-pattern.png");
+    url("/assets/bg-pattern.png");
 }
 
 .container {
@@ -238,7 +237,6 @@ const handleSubmit = async () => {
   transform: translateX(-50%);
   width: 50px;
   height: 3px;
-  /* background: #28a745; */
 }
 
 .map-container {
@@ -308,12 +306,11 @@ const handleSubmit = async () => {
   font-size: 1.2rem;
 }
 
-.contact-form {
-  background: white;
-  padding: 40px;
+/* .contact-form {
+  background: white padding: 40px;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-}
+} */
 
 .form-grid {
   display: grid;
