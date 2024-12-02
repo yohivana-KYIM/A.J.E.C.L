@@ -2,6 +2,11 @@
   <section id="contact" class="contact-section">
     <div class="container section-title" v-aos="fade - up">
       <h2>Contact</h2>
+      <div class="title-underline d-flex justify-content-center">
+        <div class="green-line me-2 line-animated"></div>
+        <div class="red-line me-2 line-animated"></div>
+        <div class="yellow-line line-animated"></div>
+      </div>
       <p>
         Association réunissant les étudiants camerounais habitants la ville de
         Lyon. Organisation à but non lucratif, ayant pour but principal de
@@ -175,6 +180,29 @@ const handleSubmit = async () => {
 </script>
 
 <style scoped>
+.title-underline {
+  margin-bottom: 0.5rem;
+}
+
+.green-line,
+.red-line,
+.yellow-line {
+  height: 4px;
+  width: 40px;
+}
+
+.green-line {
+  background-color: #28a745;
+}
+
+.red-line {
+  background-color: #dc3545;
+}
+
+.yellow-line {
+  background-color: #ffc107;
+}
+
 .contact-section {
   padding: 80px 0;
   background: linear-gradient(
@@ -196,7 +224,6 @@ const handleSubmit = async () => {
 }
 
 .section-title h2 {
-  color: #28a745;
   font-size: 2.5rem;
   margin-bottom: 20px;
   position: relative;
@@ -211,7 +238,7 @@ const handleSubmit = async () => {
   transform: translateX(-50%);
   width: 50px;
   height: 3px;
-  background: #28a745;
+  /* background: #28a745; */
 }
 
 .map-container {

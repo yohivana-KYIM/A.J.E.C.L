@@ -2,7 +2,11 @@
   <section id="about" class="about section">
     <div class="container">
       <div class="row gy-4">
-        <div class="col-lg-6 position-relative" data-aos="fade-up" data-aos-delay="100">
+        <div
+          class="col-lg-6 position-relative"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
           <div class="d-flex flex-column align-items-center mb-4">
             <h3>À propos</h3>
             <div class="title-underline d-flex justify-content-center">
@@ -11,8 +15,8 @@
               <div class="yellow-line line-animated"></div>
             </div>
           </div>
-          <br>
-          <br>
+          <br />
+          <br />
           <img src="/assets/img/about.jpg" class="img-fluid" alt="" />
           <button class="play-btn" @click="showVideo = true">
             <i class="bi bi-play-circle"></i>
@@ -20,7 +24,7 @@
           <div v-if="showVideo" class="video-overlay">
             <div class="video-container">
               <video controls>
-                <source src="/assets/img/video/Pink.mp4" type="video/mp4">
+                <source src="/assets/img/video/Pink.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
               <button class="close-btn" @click="showVideo = false">
@@ -43,13 +47,18 @@
             >
               Qui sommes-nous ?
             </h4>
-            <p 
+            <p
               class="text-center hover-text"
               @mouseover="isHovered = true"
               @mouseleave="isHovered = false"
               :class="{ 'text-hovered': isHovered }"
             >
-              L'Association des Étudiants de la Jeunesse Culturelle (A.E.J.C) est une organisation dynamique dédiée à l’épanouissement des jeunes. Fondée sur des valeurs d’éducation et d’engagement social, elle vise à développer les compétences des étudiants tout en favorisant leur implication dans des projets culturels et communautaires enrichissants.
+              L'Association des Étudiants de la Jeunesse Culturelle (A.E.J.C)
+              est une organisation dynamique dédiée à l’épanouissement des
+              jeunes. Fondée sur des valeurs d’éducation et d’engagement social,
+              elle vise à développer les compétences des étudiants tout en
+              favorisant leur implication dans des projets culturels et
+              communautaires enrichissants.
             </p>
           </div>
           <ul class="list-unstyled">
@@ -58,7 +67,9 @@
               <div>
                 <h5>Promouvoir la diversité et l’inclusion</h5>
                 <p>
-                  Nous croyons fermement en la création d’une plateforme qui encourage le dialogue et la collaboration entre étudiants de différents horizons.
+                  Nous croyons fermement en la création d’une plateforme qui
+                  encourage le dialogue et la collaboration entre étudiants de
+                  différents horizons.
                 </p>
               </div>
             </li>
@@ -67,7 +78,8 @@
               <div>
                 <h5>Créer des opportunités éducatives</h5>
                 <p>
-                  A.E.J.C organise des ateliers, séminaires et événements visant à enrichir les connaissances et les compétences des jeunes.
+                  A.E.J.C organise des ateliers, séminaires et événements visant
+                  à enrichir les connaissances et les compétences des jeunes.
                 </p>
               </div>
             </li>
@@ -76,7 +88,9 @@
               <div>
                 <h5>Encourager l’engagement citoyen</h5>
                 <p>
-                  À travers nos initiatives, nous incitons les étudiants à participer activement à la construction d’une société solidaire et responsable.
+                  À travers nos initiatives, nous incitons les étudiants à
+                  participer activement à la construction d’une société
+                  solidaire et responsable.
                 </p>
               </div>
             </li>
@@ -94,7 +108,7 @@ export default {
     return {
       showVideo: false,
       toggleWhoWeAre: false,
-      isHovered: false
+      isHovered: false,
     };
   },
 };
