@@ -1,34 +1,46 @@
 <template>
   <footer class="bg-light py-5">
     <div class="container">
-      <div class="row g-4">
+      <div class="row align-items-start mb-5">
+        <!-- Logo Section - Now on the same line with other sections -->
+        <div class="col-12 col-md-3 d-flex align-items-center mb-4">
+          <router-link to="/" class="d-inline-block me-4">
+            <img
+              src="/public/assets/img/lyon.png"
+              alt="Butterfly Logo"
+              class="img-fluid logo"
+              style="max-height: 100px"
+            />
+          </router-link>
+        </div>
+
         <!-- Sections de liens -->
-        <div 
-          v-for="(section, index) in footerSections" 
-          :key="index" 
+        <div
+          v-for="(section, index) in footerSections"
+          :key="index"
           class="col-12 col-md-3 col-sm-6 mb-4"
         >
           <h4 class="text-success border-bottom border-success pb-2 mb-3">
             {{ section.title }}
           </h4>
           <ul class="list-unstyled">
-            <li 
-              v-for="item in section.items" 
+            <li
+              v-for="item in section.items"
               :key="item"
               class="mb-2 d-flex align-items-center"
             >
               <i class="bi bi-chevron-right text-success me-2"></i>
-              <router-link 
-                :to="getRouteLink(item)" 
-                class="text-decoration-none text-secondary hover-text-success"
+              <a
+                :href="getSectionLink(item)"
+                class="text-decoration-none text-secondary footer-link"
               >
                 {{ item }}
-              </router-link>
+              </a>
             </li>
           </ul>
         </div>
 
-        <!-- Section Newsletter -->
+        <!-- Newsletter and Contact Sections (unchanged) -->
         <div class="col-12 col-md-3 col-sm-6 mb-4">
           <h4 class="text-success border-bottom border-success pb-2 mb-3">
             Newsletter
@@ -52,9 +64,25 @@
             </button>
           </form>
         </div>
+        <div class="col-12 col-md-3 col-sm-6 mb-4">
+          <h4 class="text-success border-bottom border-success pb-2 mb-3">
+            Contact
+          </h4>
+          <ul class="list-unstyled">
+            <li class="mb-2 d-flex align-items-center">
+              <i class="bi bi-envelope text-success me-2"></i>
+              <a
+                href="mailto:aejclyoncontact@gmail.com"
+                class="text-decoration-none text-secondary hover-text-success"
+              >
+                aejclyoncontact@gmail.com
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
 
-      <!-- Réseaux sociaux -->
+      <!-- Rest of the footer remains the same -->
       <div class="row mt-4 justify-content-center">
         <div class="col-12 text-center">
           <h4 class="text-success border-bottom border-success pb-2 mb-3">
@@ -75,22 +103,31 @@
         </div>
       </div>
 
-      <!-- Copyright -->
-      <hr class="my-4"/>
-      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center text-center">
+      <hr class="my-4" />
+      <div
+        class="d-flex flex-column flex-md-row justify-content-between align-items-center text-center"
+      >
         <p class="text-muted mb-3 mb-md-0">
-          &copy; {{ currentYear }} Butterfly. Tous droits réservés.
+          &copy; {{ currentYear }} A.E.J.C. Tous droits réservés.
         </p>
       </div>
 
-      <!-- Bouton Retour en haut -->
-      <button 
+      <!-- Back to Top Button -->
+      <button
         v-show="showBackToTop"
         @click="scrollToTop"
-        class="btn btn-success rounded-circle position-fixed bottom-4 end-4 z-3 back-to-top"
+        class="btn btn-success rounded-circle position-fixed bottom-4 end-4 z-3 back-to-top d-none d-md-flex"
       >
         <i class="bi bi-arrow-up"></i>
       </button>
+
+      <!-- Mobile Back to Top Button -->
+      <router-link
+        to="/"
+        class="btn btn-success rounded-circle position-fixed bottom-4 end-4 z-3 back-to-top d-md-none"
+      >
+        <i class="bi bi-house"></i>
+      </router-link>
     </div>
   </footer>
 </template>
@@ -134,27 +171,12 @@ export default {
       {
         name: "Facebook",
         icon: "bi bi-facebook",
-        link: "https://facebook.com/votrepage",
+        link: "https://www.facebook.com/Association-des-%C3%89tudiants-et-Jeunes-Camerounais-de-Lyon-AEJC-Lyon-449097125510730",
       },
       {
         name: "Instagram",
         icon: "bi bi-instagram",
-        link: "https://instagram.com/votrepage",
-      },
-      {
-        name: "LinkedIn",
-        icon: "bi bi-linkedin",
-        link: "https://linkedin.com/company/votrepage",
-      },
-      {
-        name: "Twitter/X",
-        icon: "bi bi-twitter-x",
-        link: "https://twitter.com/votrepage",
-      },
-      {
-        name: "YouTube",
-        icon: "bi bi-youtube",
-        link: "https://youtube.com/votrechaine",
+        link: "https://www.instagram.com/asso_des_etudiants_kmer_lyon/",
       }
     ];
 
@@ -170,7 +192,6 @@ export default {
     };
 
     const submitNewsletter = () => {
-      // Logique d'abonnement à la newsletter
       if (validateEmail(email.value)) {
         console.log("Newsletter signup:", email.value);
         alert("Merci de vous être abonné à notre newsletter !");
@@ -185,17 +206,23 @@ export default {
       return re.test(email);
     };
 
-    // Mapping des routes
-    const getRouteLink = (item) => {
-      const routeMap = {
+    // New method to handle section navigation
+    const getSectionLink = (item) => {
+      const sectionMap = {
         'Accueil': '/',
         'À propos': '/#about',
-        'Services': '/services',
-        'Portfolio': '/portfolio',
-        'Équipe': '/team',
-        'Contact': '/contact'
+        'Services': '/#services',
+        'Portfolio': '/#portfolio',
+        'Équipe': '/#team',
+        'Contact': '/#contact',
+        'Web Design': '/#services',
+        'Web Development': '/#services',
+        'Marketing': '/#services',
+        'Graphic Design': '/#services',
+        'Conditions d\'utilisation': '/legal/terms',
+        'Politique de confidentialité': '/legal/privacy'
       };
-      return routeMap[item] || '#';
+      return sectionMap[item] || '#';
     };
 
     onMounted(() => {
@@ -214,24 +241,43 @@ export default {
       footerSections,
       socialMedia,
       email,
-      getRouteLink
+      getSectionLink
     };
   },
 };
 </script>
 
 <style scoped>
-.hover-text-success:hover {
+.footer-link {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
   color: #198754 !important;
 }
 
-.social-icons .social-icon {
-  transition: transform 0.3s ease, color 0.3s ease;
+.footer-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #198754;
+  transition: width 0.3s ease;
 }
 
-.social-icons .social-icon:hover {
-  color: #198754 !important;
-  transform: scale(1.2);
+.footer-link:hover::after {
+  width: 100%;
+}
+
+.logo {
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
 }
 
 .back-to-top {
@@ -243,15 +289,6 @@ export default {
 }
 
 @media (max-width: 768px) {
-  .social-icons {
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-
-  .social-icons .social-icon {
-    margin: 0 10px 10px;
-  }
-
   .back-to-top {
     width: 40px;
     height: 40px;

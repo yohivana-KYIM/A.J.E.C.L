@@ -2,11 +2,7 @@
   <section id="about" class="about section">
     <div class="container">
       <div class="row gy-4">
-        <div
-          class="col-lg-6 position-relative"
-          data-aos="fade-up"
-          data-aos-delay="100"
-        >
+        <div class="col-lg-6 position-relative" data-aos="fade-up" data-aos-delay="100">
           <div class="d-flex flex-column align-items-center mb-4">
             <h3>À propos</h3>
             <div class="title-underline d-flex justify-content-center">
@@ -15,20 +11,18 @@
               <div class="yellow-line line-animated"></div>
             </div>
           </div>
-          <br />
-          <br />
           <img src="/assets/img/about.jpg" class="img-fluid" alt="" />
           <button class="play-btn" @click="showVideo = true">
-            <i class="bi bi-play-circle"></i>
+            <i class="bi bi-play-circle text-success"></i>
           </button>
           <div v-if="showVideo" class="video-overlay">
             <div class="video-container">
               <video controls>
-                <source src="/assets/img/video/Pink.mp4" type="video/mp4" />
+                <source src="/assets/img/video/Pink.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
               <button class="close-btn" @click="showVideo = false">
-                <i class="bi bi-x-circle"></i>
+                <i class="bi bi-x-circle text-success"></i>
               </button>
             </div>
           </div>
@@ -47,50 +41,40 @@
             >
               Qui sommes-nous ?
             </h4>
-            <p
-              class="text-center hover-text"
+            <p 
+              class="text-justify hover-text"
               @mouseover="isHovered = true"
               @mouseleave="isHovered = false"
               :class="{ 'text-hovered': isHovered }"
             >
-              L'Association des Étudiants de la Jeunesse Culturelle (A.E.J.C)
-              est une organisation dynamique dédiée à l’épanouissement des
-              jeunes. Fondée sur des valeurs d’éducation et d’engagement social,
-              elle vise à développer les compétences des étudiants tout en
-              favorisant leur implication dans des projets culturels et
-              communautaires enrichissants.
+              L'Association des Étudiants de la Jeunesse Culturelle (A.E.J.C) est une organisation dynamique dédiée à l'épanouissement des jeunes. Fondée sur des valeurs d'éducation et d'engagement social, elle vise à développer les compétences des étudiants tout en favorisant leur implication dans des projets culturels et communautaires enrichissants.
             </p>
           </div>
           <ul class="list-unstyled">
             <li class="d-flex align-items-start hover-list-item">
-              <i class="bi bi-diagram-3 me-3"></i>
+              <i class="bi bi-diagram-3 me-3 text-success"></i>
               <div>
-                <h5>Promouvoir la diversité et l’inclusion</h5>
-                <p>
-                  Nous croyons fermement en la création d’une plateforme qui
-                  encourage le dialogue et la collaboration entre étudiants de
-                  différents horizons.
+                <h5 class="text-success">Cohésion & solidarité</h5>
+                <p class="text-justify">
+                  L'AEJC renforce la solidarité entre les Camerounais de Lyon en valorisant l'entraide et les échanges. Chaque membre est mis en avant pour consolider le sentiment d’appartenance.
                 </p>
               </div>
             </li>
             <li class="d-flex align-items-start hover-list-item">
-              <i class="bi bi-fullscreen-exit me-3"></i>
+              <i class="bi bi-fullscreen-exit me-3 text-success"></i>
               <div>
-                <h5>Créer des opportunités éducatives</h5>
-                <p>
-                  A.E.J.C organise des ateliers, séminaires et événements visant
-                  à enrichir les connaissances et les compétences des jeunes.
+                <h5 class="text-success">Intégration et entrepreneuriat</h5>
+                <p class="text-justify">
+                  L'AEJC accompagne les jeunes Camerounais dans leur intégration sociale et professionnelle à Lyon. Elle soutient aussi les projets collaboratifs avec ses partenaires pour encourager l’entrepreneuriat.
                 </p>
               </div>
             </li>
             <li class="d-flex align-items-start hover-list-item">
-              <i class="bi bi-broadcast me-3"></i>
+              <i class="bi bi-broadcast me-3 text-success"></i>
               <div>
-                <h5>Encourager l’engagement citoyen</h5>
-                <p>
-                  À travers nos initiatives, nous incitons les étudiants à
-                  participer activement à la construction d’une société
-                  solidaire et responsable.
+                <h5 class="text-success">Activités culturelles & caritative</h5>
+                <p class="text-justify">
+                  L'AEJC promeut la culture camerounaise à travers des événements en région lyonnaise. Elle mène également des actions caritatives avec ses amis et soutiens.
                 </p>
               </div>
             </li>
@@ -108,7 +92,7 @@ export default {
     return {
       showVideo: false,
       toggleWhoWeAre: false,
-      isHovered: false,
+      isHovered: false
     };
   },
 };
@@ -124,9 +108,6 @@ export default {
 .yellow-line {
   height: 4px;
   width: 40px;
-}
-
-.green-line {
   background-color: #28a745;
 }
 
@@ -151,6 +132,7 @@ export default {
 /* Hover effects for text */
 .hover-text {
   transition: all 0.3s ease;
+  text-align: justify;
 }
 
 .text-hovered {
@@ -177,7 +159,6 @@ export default {
 
 .hover-list-item:hover i {
   color: #28a745;
-  transform: rotate(15deg);
 }
 
 .play-btn {
