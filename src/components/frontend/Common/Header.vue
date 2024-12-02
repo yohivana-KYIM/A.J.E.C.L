@@ -1,6 +1,6 @@
 <template>
-  <header 
-    :class="['main-header', {'scrolled': isScrolled}]"
+  <header
+    :class="['main-header', { scrolled: isScrolled }]"
     v-show="!isSectionHidden"
   >
     <div class="header-container">
@@ -19,31 +19,51 @@
         <ul class="nav-list">
           <li v-for="(item, index) in menuItems" :key="index" class="nav-item">
             <template v-if="!item.children">
-              <a 
-                :href="item.href" 
-                :class="['nav-link', { 'active': activeSection === item.href }]"
+              <a
+                :href="item.href"
+                :class="['nav-link', { active: activeSection === item.href }]"
                 @click="handleNavClick(item.href)"
               >
                 {{ item.label }}
               </a>
             </template>
-            
+
             <template v-else>
-              <div 
+              <div
                 class="dropdown-trigger"
                 @mouseenter="handleDropdownHover(index)"
                 @mouseleave="handleDropdownLeave(index)"
               >
                 <span>{{ item.label }}</span>
-                <i :class="['dropdown-icon', { 'rotated': openDropdowns.includes(index) }]">
+                <i
+                  :class="[
+                    'dropdown-icon',
+                    { rotated: openDropdowns.includes(index) },
+                  ]"
+                >
                   <svg width="10" height="6" viewBox="0 0 10 6">
-                    <path d="M1 1L5 5L9 1" stroke="currentColor" fill="none" stroke-width="2"/>
+                    <path
+                      d="M1 1L5 5L9 1"
+                      stroke="currentColor"
+                      fill="none"
+                      stroke-width="2"
+                    />
                   </svg>
                 </i>
-                
-                <ul :class="['dropdown-menu', { 'show': openDropdowns.includes(index) }]">
-                  <li v-for="(child, childIndex) in item.children" :key="childIndex">
-                    <a :href="child.href" class="dropdown-link">{{ child.label }}</a>
+
+                <ul
+                  :class="[
+                    'dropdown-menu',
+                    { show: openDropdowns.includes(index) },
+                  ]"
+                >
+                  <li
+                    v-for="(child, childIndex) in item.children"
+                    :key="childIndex"
+                  >
+                    <a :href="child.href" class="dropdown-link">{{
+                      child.label
+                    }}</a>
                   </li>
                 </ul>
               </div>
@@ -53,9 +73,9 @@
       </nav>
 
       <!-- Mobile Menu Toggle -->
-      <button 
+      <button
         class="mobile-toggle"
-        :class="{ 'active': isMenuOpen }"
+        :class="{ active: isMenuOpen }"
         @click="toggleMenu"
         aria-label="Toggle Menu"
       >
@@ -65,39 +85,59 @@
       </button>
 
       <!-- Mobile Navigation -->
-      <div :class="['nav-mobile', { 'show': isMenuOpen }]">
+      <div :class="['nav-mobile', { show: isMenuOpen }]">
         <div class="mobile-menu-container">
           <ul class="mobile-nav-list">
-            <li v-for="(item, index) in menuItems" :key="index" class="mobile-nav-item">
+            <li
+              v-for="(item, index) in menuItems"
+              :key="index"
+              class="mobile-nav-item"
+            >
               <template v-if="!item.children">
-                <a 
-                  :href="item.href" 
+                <a
+                  :href="item.href"
                   class="mobile-nav-link"
                   @click="handleMobileNavClick(item.href)"
                 >
                   {{ item.label }}
                 </a>
               </template>
-              
+
               <template v-else>
                 <div class="mobile-dropdown">
-                  <button 
+                  <button
                     class="mobile-dropdown-trigger"
                     @click="toggleMobileDropdown(index)"
                   >
                     {{ item.label }}
-                    <i :class="['dropdown-icon', { 'rotated': openMobileDropdowns.includes(index) }]">
+                    <i
+                      :class="[
+                        'dropdown-icon',
+                        { rotated: openMobileDropdowns.includes(index) },
+                      ]"
+                    >
                       <svg width="10" height="6" viewBox="0 0 10 6">
-                        <path d="M1 1L5 5L9 1" stroke="currentColor" fill="none" stroke-width="2"/>
+                        <path
+                          d="M1 1L5 5L9 1"
+                          stroke="currentColor"
+                          fill="none"
+                          stroke-width="2"
+                        />
                       </svg>
                     </i>
                   </button>
-                  
+
                   <transition name="slide">
-                    <ul v-if="openMobileDropdowns.includes(index)" class="mobile-dropdown-menu">
-                      <li v-for="(child, childIndex) in item.children" :key="childIndex">
-                        <a 
-                          :href="child.href" 
+                    <ul
+                      v-if="openMobileDropdowns.includes(index)"
+                      class="mobile-dropdown-menu"
+                    >
+                      <li
+                        v-for="(child, childIndex) in item.children"
+                        :key="childIndex"
+                      >
+                        <a
+                          :href="child.href"
                           class="mobile-dropdown-link"
                           @click="handleMobileNavClick(child.href)"
                         >
@@ -112,6 +152,13 @@
           </ul>
         </div>
       </div>
+    </div>
+    <div class="lanes-container">
+      <div class="lane green"></div>
+      <div class="lane red">
+        <span class="star">★</span>
+      </div>
+      <div class="lane yellow"></div>
     </div>
   </header>
 </template>
@@ -140,42 +187,43 @@ export default {
             { label: "Actualités", href: "#news" },
             { label: "Événements", href: "#events" },
             { label: "Galerie", href: "#gallery" },
-            { label: "FAQ", href: "#faq" }
-          ]
+            { label: "FAQ", href: "#faq" },
+          ],
         },
-        { label: "Contact", href: "#contact" }
-      ]
+        { label: "Contact", href: "#contact" },
+      ],
     };
   },
   mounted() {
-    window.addEventListener('scroll', this.handleScroll);
+    window.addEventListener("scroll", this.handleScroll);
     this.handleScroll();
   },
   beforeUnmount() {
-    window.removeEventListener('scroll', this.handleScroll);
+    window.removeEventListener("scroll", this.handleScroll);
   },
   methods: {
     handleScroll() {
-      const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-      
+      const currentScrollPosition =
+        window.pageYOffset || document.documentElement.scrollTop;
+
       // Handle header visibility on scroll
       this.isScrolled = currentScrollPosition > 50;
-      
+
       // Hide header when scrolling down, show when scrolling up
       if (currentScrollPosition < 0) {
         return;
       }
-      
+
       if (Math.abs(currentScrollPosition - this.lastScrollPosition) < 60) {
         return;
       }
-      
+
       this.isSectionHidden = currentScrollPosition > this.lastScrollPosition;
       this.lastScrollPosition = currentScrollPosition;
     },
     toggleMenu() {
       this.isMenuOpen = !this.isMenuOpen;
-      document.body.style.overflow = this.isMenuOpen ? 'hidden' : '';
+      document.body.style.overflow = this.isMenuOpen ? "hidden" : "";
     },
     handleDropdownHover(index) {
       if (!this.openDropdowns.includes(index)) {
@@ -183,11 +231,13 @@ export default {
       }
     },
     handleDropdownLeave(index) {
-      this.openDropdowns = this.openDropdowns.filter(i => i !== index);
+      this.openDropdowns = this.openDropdowns.filter((i) => i !== index);
     },
     toggleMobileDropdown(index) {
       if (this.openMobileDropdowns.includes(index)) {
-        this.openMobileDropdowns = this.openMobileDropdowns.filter(i => i !== index);
+        this.openMobileDropdowns = this.openMobileDropdowns.filter(
+          (i) => i !== index
+        );
       } else {
         this.openMobileDropdowns.push(index);
       }
@@ -195,13 +245,13 @@ export default {
     handleNavClick(href) {
       this.activeSection = href;
       this.isMenuOpen = false;
-      document.body.style.overflow = '';
+      document.body.style.overflow = "";
     },
     handleMobileNavClick(href) {
       this.handleNavClick(href);
       this.openMobileDropdowns = [];
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -275,7 +325,7 @@ export default {
 }
 
 .nav-link::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -314,7 +364,8 @@ export default {
   left: -1rem;
   background: white;
   border-radius: 0.5rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
   opacity: 0;
   visibility: hidden;
   transform: translateY(10px);
@@ -548,5 +599,39 @@ export default {
     font-size: 1rem;
     padding: 0.75rem;
   }
+}
+
+.lanes-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1px;
+  width: 100%;
+  height: 10px; /* Réduit pour avoir des rectangles plus fins */
+}
+
+.lane {
+  height: 100%;
+  position: relative;
+}
+
+.green {
+  background-color: #007a5e; /* Vert camerounais */
+}
+
+.red {
+  background-color: #ce1126; /* Rouge camerounais */
+}
+
+.yellow {
+  background-color: #fcd116; /* Jaune camerounais */
+}
+
+.star {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fcd116; /* Étoile en jaune camerounais */
+  font-size: 8px; /* Taille réduite pour l'étoile */
 }
 </style>

@@ -1,7 +1,8 @@
 <template>
   <div>
-<br/>
-<br/>
+    <br />
+    <br />
+
     <HeroSection />
     <AboutSection />
     <StatsSection />
@@ -17,6 +18,7 @@
 
 <script>
 // Importation des composants avec des chemins relatifs
+
 import HeroSection from "../components/frontend/Sections/HeroSection.vue";
 import AboutSection from "../components/frontend/Sections/AboutSection.vue";
 import StatsSection from "../components/frontend/Sections/StatsSection.vue";

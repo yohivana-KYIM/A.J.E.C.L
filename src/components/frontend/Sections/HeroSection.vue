@@ -15,7 +15,18 @@
           <div class="cta-container">
             <a href="#about" class="cta-button">
               <span>Découvrir l'association</span>
-              <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg
+                class="arrow-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
                 <line x1="5" y1="12" x2="19" y2="12"></line>
                 <polyline points="12 5 19 12 12 19"></polyline>
               </svg>
@@ -52,69 +63,67 @@ export default {
       typedText: "",
       fullText: "Bienvenue à l'AEJC ",
       currentImageIndex: 0,
-      images: [
-        "/assets/img/bg-group2.jpg",
-        "/assets/img/bg-group.jpg"
-      ],
+      images: ["/assets/img/bg-group2.jpg", "/assets/img/bg-group.jpg"],
       imageInterval: null,
-      isTyping: false
-    }
+      isTyping: false,
+    };
   },
   methods: {
     async typeText() {
       while (true) {
         // Type forward
         for (let i = 0; i <= this.fullText.length; i++) {
-          this.typedText = this.fullText.substring(0, i)
-          await new Promise(resolve => setTimeout(resolve, 100))
+          this.typedText = this.fullText.substring(0, i);
+          await new Promise((resolve) => setTimeout(resolve, 100));
         }
-        await new Promise(resolve => setTimeout(resolve, 2000))
-        
+        await new Promise((resolve) => setTimeout(resolve, 2000));
+
         // Type backward
         for (let i = this.fullText.length; i >= 0; i--) {
-          this.typedText = this.fullText.substring(0, i)
-          await new Promise(resolve => setTimeout(resolve, 50))
+          this.typedText = this.fullText.substring(0, i);
+          await new Promise((resolve) => setTimeout(resolve, 50));
         }
-        await new Promise(resolve => setTimeout(resolve, 500))
+        await new Promise((resolve) => setTimeout(resolve, 500));
       }
     },
     startImageSlideshow() {
       this.imageInterval = setInterval(() => {
-        this.currentImageIndex = (this.currentImageIndex + 1) % this.images.length
-      }, 5000)
+        this.currentImageIndex =
+          (this.currentImageIndex + 1) % this.images.length;
+      }, 5000);
     },
     preloadImages() {
-      this.images.forEach(src => {
-        const img = new Image()
-        img.src = src
+      this.images.forEach((src) => {
+        const img = new Image();
+        img.src = src;
         img.onload = () => {
           // Ensure image is loaded at full quality
-          img.style.imageRendering = 'high-quality'
-        }
-      })
-    }
+          img.style.imageRendering = "high-quality";
+        };
+      });
+    },
   },
   mounted() {
-    this.preloadImages()
+    this.preloadImages();
     requestAnimationFrame(() => {
-      this.isVisible = true
-      this.typeText()
-      this.startImageSlideshow()
-    })
+      this.isVisible = true;
+      this.typeText();
+      this.startImageSlideshow();
+    });
   },
   beforeUnmount() {
-    if (this.imageInterval) clearInterval(this.imageInterval)
-  }
-}
+    if (this.imageInterval) clearInterval(this.imageInterval);
+  },
+};
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap");
 
 .hero-section {
   min-height: 100vh;
   background: linear-gradient(to right, #ffffff, #f8fafc);
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   padding: 2rem 0;
   display: flex;
   align-items: center;
@@ -222,13 +231,13 @@ export default {
   text-decoration: none;
   transition: all 0.3s ease;
   box-shadow: 0 4px 6px -1px rgba(34, 197, 94, 0.2),
-              0 2px 4px -1px rgba(34, 197, 94, 0.1);
+    0 2px 4px -1px rgba(34, 197, 94, 0.1);
 }
 
 .cta-button:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 12px -1px rgba(34, 197, 94, 0.2),
-              0 4px 6px -1px rgba(34, 197, 94, 0.1);
+    0 4px 6px -1px rgba(34, 197, 94, 0.1);
 }
 
 .arrow-icon {
@@ -248,7 +257,9 @@ export default {
 }
 
 @keyframes blink {
-  50% { opacity: 0; }
+  50% {
+    opacity: 0;
+  }
 }
 
 .fade-enter-active,
@@ -266,7 +277,7 @@ export default {
   .main-title {
     font-size: 3.5rem;
   }
-  
+
   .hero-image-wrapper {
     height: 450px;
   }
@@ -276,11 +287,11 @@ export default {
   .main-title {
     font-size: 3rem;
   }
-  
+
   .hero-content {
     gap: 3rem;
   }
-  
+
   .hero-image-wrapper {
     height: 400px;
   }
@@ -291,28 +302,28 @@ export default {
     grid-template-columns: 1fr;
     text-align: center;
   }
-  
+
   .hero-image-wrapper {
     order: -1;
     margin-bottom: 2rem;
     height: 350px;
   }
-  
+
   .main-title {
     font-size: 2.5rem;
     justify-content: center;
   }
-  
+
   .hero-description {
     font-size: 1.125rem;
     margin-bottom: 2rem;
   }
-  
+
   .cta-container {
     display: flex;
     justify-content: center;
   }
-  
+
   .cta-button {
     width: auto;
     min-width: 200px;
@@ -326,19 +337,19 @@ export default {
   .container {
     padding: 0 1rem;
   }
-  
+
   .main-title {
     font-size: 2rem;
   }
-  
+
   .hero-image-wrapper {
     height: 300px;
   }
-  
+
   .hero-description {
     font-size: 1rem;
   }
-  
+
   .cta-button {
     min-width: 180px;
     padding: 0.75rem 1.25rem;
