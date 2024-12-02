@@ -2,6 +2,12 @@
   <section id="services" class="services section light-background">
     <div class="container section-title" data-aos="fade-up">
       <h2>Services</h2>
+
+      <div class="title-underline d-flex justify-content-center">
+        <div class="green-line me-2 line-animated"></div>
+        <div class="red-line me-2 line-animated"></div>
+        <div class="yellow-line line-animated"></div>
+      </div>
       <p>
         Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
         consectetur velit
@@ -106,4 +112,24 @@ export default {
 
 <style scoped>
 /* Ajoutez vos styles ici */
+
+.title-underline {
+  margin-bottom: 0.5rem;
+}
+
+.green-line,
+.red-line,
+.yellow-line {
+  height: 4px;
+  width: 40px;
+  background-color: #28a745;
+}
+
+.red-line {
+  background-color: #dc3545;
+}
+
+.yellow-line {
+  background-color: #ffc107;
+}
 </style>
