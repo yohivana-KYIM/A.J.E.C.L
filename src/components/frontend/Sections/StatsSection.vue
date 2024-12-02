@@ -15,7 +15,7 @@
               data-purecounter-duration="1"
               class="purecounter"
             ></span>
-            <p>Partenaires</p>
+            <p><strong>Clients</strong></p>
           </div>
         </div>
         <div class="col-lg-3 col-md-6">
@@ -26,7 +26,7 @@
               data-purecounter-duration="1"
               class="purecounter"
             ></span>
-            <p>Projects</p>
+            <p><strong>Projects</strong></p>
           </div>
         </div>
         <div class="col-lg-3 col-md-6">
@@ -37,7 +37,7 @@
               data-purecounter-duration="1"
               class="purecounter"
             ></span>
-            <p>Hours Of Support</p>
+            <p><strong>Hours Of Support</strong></p>
           </div>
         </div>
         <div class="col-lg-3 col-md-6">
@@ -48,7 +48,7 @@
               data-purecounter-duration="1"
               class="purecounter"
             ></span>
-            <p>Workers</p>
+            <p><strong>Workers</strong></p>
           </div>
         </div>
       </div>
