@@ -4,7 +4,7 @@
       <!-- Section Title -->
       <div class="section-title text-center mb-5" data-aos="fade-up">
         <h2 class="mb-3">Nos Entrepreneurs</h2>
-        <div class="title-underline d-flex justify-content-center mb-3">
+        <div class="title-underline d-flex justify-content-center">
           <div class="green-line me-2 line-animated"></div>
           <div class="red-line me-2 line-animated"></div>
           <div class="yellow-line line-animated"></div>
@@ -238,6 +238,27 @@ export default {
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 15px;
+}
+.title-underline {
+  margin-bottom: 1rem;
+}
+
+.green-line,
+.red-line,
+.yellow-line {
+  height: 4px;
+  width: 40px;
+  transition: width 0.3s ease;
+}
+
+.green-line {
+  background-color: #28a745;
+}
+.red-line {
+  background-color: #dc3545;
+}
+.yellow-line {
+  background-color: #ffc107;
 }
 
 .btn-close {

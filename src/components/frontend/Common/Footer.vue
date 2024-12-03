@@ -124,10 +124,10 @@
 </template>
 
 <script>
-import { ref, onMounted, onBeforeUnmount, computed } from 'vue';
+import { ref, onMounted, onBeforeUnmount, computed } from "vue";
 
 export default {
-  name: 'FooterComponent',
+  name: "FooterComponent",
   setup() {
     const showScrollButton = ref(false);
     const email = ref("");
@@ -137,25 +137,22 @@ export default {
       {
         title: "Pages",
         items: [
-          "Accueil", "À propos", "Services", 
-          "Portfolio", "Équipe", "Contact"
+          "Accueil",
+          "À propos",
+          "Services",
+          "Portfolio",
+          "Équipe",
+          "Contact",
+          "Calendrier des activités",
         ],
       },
-      { 
-        title: "Services", 
-        items: [
-          "Web Design", 
-          "Web Development", 
-          "Marketing", 
-          "Graphic Design"
-        ] 
+      {
+        title: "Services",
+        items: ["Web Design", "Web Development", "Marketing", "Graphic Design"],
       },
       {
         title: "Légal",
-        items: [
-          "Conditions d'utilisation", 
-          "Politique de confidentialité"
-        ],
+        items: ["Conditions d'utilisation", "Politique de confidentialité"],
       },
     ];
 
@@ -169,32 +166,33 @@ export default {
         name: "Instagram",
         icon: "bi bi-instagram",
         link: "https://www.instagram.com/asso_des_etudiants_kmer_lyon/",
-      }
+      },
     ];
 
     const currentYear = computed(() => new Date().getFullYear());
 
     const handleScroll = () => {
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const scrollTop =
+        window.pageYOffset || document.documentElement.scrollTop;
       showScrollButton.value = scrollTop > scrollThreshold;
     };
 
     const scrollToTop = () => {
       window.scrollTo({
         top: 0,
-        behavior: "smooth"
+        behavior: "smooth",
       });
     };
 
     const scrollToSection = (sectionId) => {
-      if (sectionId === '/#') {
+      if (sectionId === "/#") {
         scrollToTop();
       } else {
         const section = document.querySelector(sectionId);
         if (section) {
-          section.scrollIntoView({ 
-            behavior: 'smooth',
-            block: 'start'
+          section.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
           });
         }
       }
@@ -217,20 +215,22 @@ export default {
 
     const getSectionLink = (item) => {
       const sectionMap = {
-        'Accueil': '/',
-        'À propos': '/#about',
-        'Services': '/#services',
-        'Portfolio': '/#portfolio',
-        'Équipe': '/#team',
-        'Contact': '/#contact',
-        'Web Design': '/#services',
-        'Web Development': '/#services',
-        'Marketing': '/#services',
-        'Graphic Design': '/#services',
-        'Conditions d\'utilisation': '/legal/terms',
-        'Politique de confidentialité': '/legal/privacy'
+        Accueil: "/",
+        "À propos": "/#about",
+        Services: "/#services",
+        Portfolio: "/#portfolio",
+        Équipe: "/#team",
+
+        Contact: "/#contact",
+        "Calendrier des activités": "/calendrier",
+        "Web Design": "/#services",
+        "Web Development": "/#services",
+        Marketing: "/#services",
+        "Graphic Design": "/#services",
+        "Conditions d'utilisation": "/legal/terms",
+        "Politique de confidentialité": "/legal/privacy",
       };
-      return sectionMap[item] || '#';
+      return sectionMap[item] || "#";
     };
 
     onMounted(() => {
@@ -251,7 +251,7 @@ export default {
       footerSections,
       socialMedia,
       email,
-      getSectionLink
+      getSectionLink,
     };
   },
 };
@@ -341,7 +341,8 @@ export default {
 
 /* Animation for scroll button */
 @keyframes bounce {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
   50% {
