@@ -1,21 +1,26 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Home from "../views/Home.vue"; // Path to Home.vue
+import Home from "../views/Home.vue"; // Chemin vers Home.vue
+import Calendrier from "../components/frontend/calendrier/calendrier.vue"; // Chemin vers Calendrier.vue
 
-// Define your routes here
 const routes = [
   {
     path: "/",
     name: "Home",
     component: Home,
   },
+  {
+    path: "/calendrier",
+    name: "Calendrier",
+    component: Calendrier,
+  },
 
-  // Add more routes as needed
+  // Ajoutez d'autres routes si nécessaire
 ];
 
-// Create the router instance
+// Créer l'instance du routeur
 const router = createRouter({
   history: createWebHistory(),
-  routes, // Register the routes
+  routes, // Enregistrer les routes
 });
 
 export default router;

@@ -1,11 +1,8 @@
 <template>
-  <header
-    :class="['main-header', { scrolled: isScrolled }]"
-    v-show="!isSectionHidden"
-  >
+  <header :class="['main-header', { scrolled: isScrolled }]">
     <div class="header-container">
       <div class="logo-container">
-        <a href="/" class="logo-link">
+        <a href="http://localhost:5173/" class="logo-link">
           <img
             src="/assets/img/lyon.png"
             alt="AEJC Lyon Logo"
@@ -19,13 +16,14 @@
         <ul class="nav-list">
           <li v-for="(item, index) in menuItems" :key="index" class="nav-item">
             <template v-if="!item.children">
-              <a
-                :href="item.href"
+              <!-- Use router-link for the new menu item -->
+              <router-link
+                :to="item.href"
                 :class="['nav-link', { active: activeSection === item.href }]"
                 @click="handleNavClick(item.href)"
               >
                 {{ item.label }}
-              </a>
+              </router-link>
             </template>
 
             <template v-else>
@@ -94,13 +92,14 @@
               class="mobile-nav-item"
             >
               <template v-if="!item.children">
-                <a
-                  :href="item.href"
+                <!-- Use router-link for the new mobile menu item -->
+                <router-link
+                  :to="item.href"
                   class="mobile-nav-link"
                   @click="handleMobileNavClick(item.href)"
                 >
                   {{ item.label }}
-                </a>
+                </router-link>
               </template>
 
               <template v-else>
@@ -170,7 +169,6 @@ export default {
     return {
       isScrolled: false,
       isMenuOpen: false,
-      isSectionHidden: false,
       activeSection: "#hero",
       openDropdowns: [],
       openMobileDropdowns: [],
@@ -181,16 +179,8 @@ export default {
         { label: "Services", href: "#services" },
         { label: "Evenements", href: "#portfolio" },
         { label: "Équipe", href: "#team" },
-        // {
-        //   label: "Plus",
-        //   children: [
-        //     { label: "Actualités", href: "#news" },
-        //     { label: "Événements", href: "#events" },
-        //     { label: "Galerie", href: "#gallery" },
-        //     { label: "FAQ", href: "#faq" },
-        //   ],
-        // },
         { label: "Contact", href: "#contact" },
+        { label: "Calendrier des activités ", href: "/calendrier" }, // New menu item
       ],
     };
   },
@@ -206,20 +196,8 @@ export default {
       const currentScrollPosition =
         window.pageYOffset || document.documentElement.scrollTop;
 
-      // Handle header visibility on scroll
+      // Update scrolled state for styling
       this.isScrolled = currentScrollPosition > 50;
-
-      // Hide header when scrolling down, show when scrolling up
-      if (currentScrollPosition < 0) {
-        return;
-      }
-
-      if (Math.abs(currentScrollPosition - this.lastScrollPosition) < 60) {
-        return;
-      }
-
-      this.isSectionHidden = currentScrollPosition > this.lastScrollPosition;
-      this.lastScrollPosition = currentScrollPosition;
     },
     toggleMenu() {
       this.isMenuOpen = !this.isMenuOpen;
@@ -256,6 +234,10 @@ export default {
 </script>
 
 <style scoped>
+body {
+  padding-top: 80px;
+}
+
 .main-header {
   position: fixed;
   top: 0;
@@ -266,7 +248,8 @@ export default {
   z-index: 1000;
   transition: all 0.3s ease;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  transform: translateY(0);
+  /* Ensure header is always visible */
+  transform: translateY(0) !important;
 }
 
 .main-header.scrolled {
@@ -282,7 +265,7 @@ export default {
   justify-content: space-between;
 }
 
-/* Logo Styles */
+/* Styles du logo */
 .logo-container {
   flex-shrink: 0;
 }
@@ -300,6 +283,8 @@ export default {
 .scrolled .logo-image {
   height: 70px;
 }
+
+/* Autres styles de navigation inchangés */
 
 /* Desktop Navigation */
 .nav-desktop {
