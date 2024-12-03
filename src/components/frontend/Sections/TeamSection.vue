@@ -113,8 +113,9 @@ export default {
         image: "/assets/img/team/team-3.jpg",
       },
       {
-        name: "Ulysse STANLEY",
-        position: "Vice-chargé des formations",
+        name: "Stediane mekouo",
+        position:
+          "chargé des formations sur l'intégration socioprofessionnelle des étudiants",
         image: "/assets/img/team/team-7.jpg",
       },
       {
@@ -123,8 +124,9 @@ export default {
         image: "/assets/img/team/team-4.jpg",
       },
       {
-        name: "Sandra NANA",
-        position: "Chargée de formation et comptable",
+        name: "Larissa Ngantchou Njiondo",
+        position:
+          " responsable marketing, prospection, recherche de financement",
         image: "/assets/img/team/team-5.jpg",
       },
       {
