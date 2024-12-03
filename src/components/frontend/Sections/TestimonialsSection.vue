@@ -51,36 +51,36 @@ export default {
     const testimonials = ref([
       {
         img: "/assets/img/testimonials/testimonials-1.jpg",
-        name: "Doric Ngouffo",
-        role: "Responsable de la communication",
+        name: "Fabrice Nkoa Badjeck",
+        role: " un professionnel chevronné avec plus de 10 ans d'expérience dans les domaines de la gestion de projets, du développement commercial, et de la supervision technique.",
         comment:
           "J'ai rejoint l'association récemment et cela a été une expérience enrichissante. J'ai rencontré des personnes extraordinaires qui m'ont aidé à m'intégrer rapidement.",
       },
       {
         img: "/assets/img/testimonials/testimonials-2.jpg",
-        name: "Sara Wilsson",
-        role: "Designer",
+        name: "Larissa Ngantchou Njiondo",
+        role: " responsable marketing, prospection, recherche de financement",
         comment:
           "L'organisation est vraiment bien structurée et accueillante. Elle offre une excellente plateforme pour collaborer et échanger des idées.",
       },
       {
         img: "/assets/img/testimonials/testimonials-3.jpg",
-        name: "Jena Karlis",
-        role: "Commerçante",
+        name: "Stediane mekouo",
+        role: " chargé des formations sur l'intégration socioprofessionnelle des étudiants",
         comment:
           "Grâce à cette association, j'ai pu élargir mon réseau professionnel et découvrir des opportunités intéressantes.",
       },
       {
         img: "/assets/img/testimonials/testimonials-4.jpg",
-        name: "Matt Brandon",
-        role: "Freelance",
+        name: "Doric Ngouffo",
+        role: "Responsable de la communication",
         comment:
           "L'ambiance est chaleureuse et les activités sont parfaitement organisées. Cela a été une expérience inoubliable.",
       },
       {
         img: "/assets/img/testimonials/testimonials-5.jpg",
-        name: "John Larson",
-        role: "Entrepreneur",
+        name: "Moses Boyom",
+        role: "chargé des activités ludiques et sportives",
         comment:
           "L'association m'a permis de rencontrer des partenaires clés pour mes projets. Je recommande vivement de s'y engager.",
       },
