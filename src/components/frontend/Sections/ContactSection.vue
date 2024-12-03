@@ -53,7 +53,7 @@
               <input
                 v-model="formData.name"
                 type="text"
-                placeholder="Your Name"
+                placeholder="Votre Nom"
                 required
                 @focus="handleFocus"
                 @blur="handleBlur"
@@ -63,7 +63,7 @@
               <input
                 v-model="formData.email"
                 type="email"
-                placeholder="Your Email"
+                placeholder="Votre Email"
                 required
                 @focus="handleFocus"
                 @blur="handleBlur"
@@ -73,7 +73,7 @@
               <input
                 v-model="formData.subject"
                 type="text"
-                placeholder="Subject"
+                placeholder="Sujet"
                 required
                 @focus="handleFocus"
                 @blur="handleBlur"
@@ -92,13 +92,15 @@
           </div>
 
           <div class="form-status">
-            <div v-if="loading" class="loading">Loading...</div>
+            <div v-if="loading" class="loading">Chargement...</div>
             <div v-if="error" class="error">{{ error }}</div>
-            <div v-if="success" class="success">Message sent successfully!</div>
+            <div v-if="success" class="success">
+              Message envoyé avec succès !
+            </div>
           </div>
 
           <button type="submit" class="submit-button" :disabled="loading">
-            <span>Send Message</span>
+            <span>Envoyer le Message</span>
             <i class="bi bi-send"></i>
           </button>
         </form>
@@ -109,21 +111,22 @@
 
 <script setup>
 import { ref, reactive } from "vue";
+import { addContact } from "@/reponses/contact";
 
 const contactInfo = [
   {
     icon: "bi bi-geo-alt",
-    title: "Address",
+    title: "Adresse",
     value: "90 Rue de Marseille, 69007 Lyon, France",
   },
   {
     icon: "bi bi-telephone",
-    title: "Call Us",
+    title: "Nous Appeler",
     value: "+33 6 99 69 00 52",
   },
   {
     icon: "bi bi-envelope",
-    title: "Email Us",
+    title: "Nous Écrire",
     value: "aejclyoncontact(at)gmail.com",
   },
 ];
@@ -150,30 +153,58 @@ const handleBlur = (e) => {
 };
 
 const handleSubmit = async () => {
+  // Validation de base des champs du formulaire
+  if (
+    !formData.name ||
+    !formData.email ||
+    !formData.subject ||
+    !formData.message
+  ) {
+    error.value = "Veuillez remplir tous les champs";
+    return;
+  }
+
+  // Validation de l'email
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(formData.email)) {
+    error.value = "Veuillez entrer une adresse email valide";
+    return;
+  }
+
   loading.value = true;
   error.value = "";
   success.value = false;
 
   try {
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-
-    // Store form data in contact.js file
-    const formDataJson = JSON.stringify(formData);
-    fs.writeFileSync(
-      `src/reponses/contact.js`,
-      `export default ${formDataJson};`
-    );
+    // Ajout du contact dans localStorage
+    addContact({
+      ...formData,
+      ipAddress: await fetchIPAddress(), // Optionnel : récupérer l'adresse IP
+    });
 
     success.value = true;
+    // Réinitialisation du formulaire
     formData.name = "";
     formData.email = "";
     formData.subject = "";
     formData.message = "";
   } catch (err) {
-    error.value = "Failed to send message. Please try again.";
+    error.value = "Échec de l'envoi du message. Veuillez réessayer.";
+    console.error(err);
   } finally {
     loading.value = false;
+  }
+};
+
+// Fonction optionnelle pour récupérer l'adresse IP
+const fetchIPAddress = async () => {
+  try {
+    const response = await fetch("https://api.ipify.org?format=json");
+    const data = await response.json();
+    return data.ip;
+  } catch (error) {
+    console.warn("Impossible de récupérer l'adresse IP");
+    return null;
   }
 };
 </script>

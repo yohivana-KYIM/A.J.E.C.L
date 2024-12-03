@@ -2,7 +2,6 @@
   <footer class="bg-light py-5">
     <div class="container">
       <div class="row align-items-start mb-5">
-        <!-- Logo Section - Now on the same line with other sections -->
         <div class="col-12 col-md-3 d-flex align-items-center mb-4">
           <router-link to="/" class="d-inline-block me-4">
             <img
@@ -14,7 +13,6 @@
           </router-link>
         </div>
 
-        <!-- Sections de liens -->
         <div
           v-for="(section, index) in footerSections"
           :key="index"
@@ -33,6 +31,7 @@
               <a
                 :href="getSectionLink(item)"
                 class="text-decoration-none text-secondary footer-link"
+                @click="scrollToSection(getSectionLink(item))"
               >
                 {{ item }}
               </a>
@@ -40,7 +39,6 @@
           </ul>
         </div>
 
-        <!-- Newsletter and Contact Sections (unchanged) -->
         <div class="col-12 col-md-3 col-sm-6 mb-4">
           <h4 class="text-success border-bottom border-success pb-2 mb-3">
             Newsletter
@@ -82,7 +80,6 @@
         </div>
       </div>
 
-      <!-- Rest of the footer remains the same -->
       <div class="row mt-4 justify-content-center">
         <div class="col-12 text-center">
           <h4 class="text-success border-bottom border-success pb-2 mb-3">
@@ -112,22 +109,16 @@
         </p>
       </div>
 
-      <!-- Back to Top Button -->
+      <!-- Universal scroll-to-top button -->
       <button
-        v-show="showBackToTop"
+        v-show="showScrollButton"
         @click="scrollToTop"
-        class="btn btn-success rounded-circle position-fixed bottom-4 end-4 z-3 back-to-top d-none d-md-flex"
+        class="scroll-button"
+        :class="{ 'scroll-button-visible': showScrollButton }"
+        aria-label="Retour en haut"
       >
         <i class="bi bi-arrow-up"></i>
       </button>
-
-      <!-- Mobile Back to Top Button -->
-      <router-link
-        to="/"
-        class="btn btn-success rounded-circle position-fixed bottom-4 end-4 z-3 back-to-top d-md-none"
-      >
-        <i class="bi bi-house"></i>
-      </router-link>
     </div>
   </footer>
 </template>
@@ -138,8 +129,9 @@ import { ref, onMounted, onBeforeUnmount, computed } from 'vue';
 export default {
   name: 'FooterComponent',
   setup() {
-    const showBackToTop = ref(false);
+    const showScrollButton = ref(false);
     const email = ref("");
+    const scrollThreshold = 300; // Pixels to scroll before showing button
 
     const footerSections = [
       {
@@ -184,11 +176,28 @@ export default {
 
     const handleScroll = () => {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      showBackToTop.value = scrollTop > 300;
+      showScrollButton.value = scrollTop > scrollThreshold;
     };
 
     const scrollToTop = () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    };
+
+    const scrollToSection = (sectionId) => {
+      if (sectionId === '/#') {
+        scrollToTop();
+      } else {
+        const section = document.querySelector(sectionId);
+        if (section) {
+          section.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }
     };
 
     const submitNewsletter = () => {
@@ -206,7 +215,6 @@ export default {
       return re.test(email);
     };
 
-    // New method to handle section navigation
     const getSectionLink = (item) => {
       const sectionMap = {
         'Accueil': '/',
@@ -227,6 +235,7 @@ export default {
 
     onMounted(() => {
       window.addEventListener("scroll", handleScroll);
+      handleScroll(); // Check initial scroll position
     });
 
     onBeforeUnmount(() => {
@@ -234,8 +243,9 @@ export default {
     });
 
     return {
-      showBackToTop,
+      showScrollButton,
       scrollToTop,
+      scrollToSection,
       submitNewsletter,
       currentYear,
       footerSections,
@@ -280,20 +290,76 @@ export default {
   transform: scale(1.05);
 }
 
-.back-to-top {
+/* Enhanced Scroll Button Styles */
+.scroll-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
   width: 50px;
   height: 50px;
+  border-radius: 50%;
+  background-color: #198754;
+  color: white;
+  border: none;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  z-index: 1000;
 }
 
+.scroll-button-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-button:hover {
+  background-color: #146c43;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.scroll-button:active {
+  transform: translateY(-1px);
+}
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
-  .back-to-top {
-    width: 40px;
-    height: 40px;
+  .scroll-button {
+    width: 45px;
+    height: 45px;
     bottom: 20px;
     right: 20px;
+    font-size: 1.25rem;
   }
+}
+
+/* Animation for scroll button */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.scroll-button i {
+  animation: bounce 2s infinite;
+}
+
+/* Social icons hover effect */
+.social-icon {
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #198754 !important;
+  transform: translateY(-3px);
 }
 </style>
