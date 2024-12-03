@@ -8,10 +8,10 @@
     <StatsSection />
 
     <ClientsSection />
-    <GallerySection />
-
+   
     <ServicesSection />
     <PortfolioSection />
+    <GallerySection />
     <TestimonialsSection />
     <TeamSection />
 
