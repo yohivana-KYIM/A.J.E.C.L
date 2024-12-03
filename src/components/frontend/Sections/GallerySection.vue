@@ -73,9 +73,9 @@ export default {
           showBio: false,
         },
         {
-          name: "Dirane Willy Tafen",
+          name: "Kevin Dango",
           biography:
-            "Ingénieur en informatique, consultant et formateur spécialisé en Cloud et DevOps. Diplômé de SUPINFO International University, il a fondé EAZYTraining. Il a formé près de 20 000 apprenants et enseigne dans des institutions comme SUPINFO et YNOV. Contributeur actif de la communauté IT francophone.",
+            "un entrepreneur et formateur passionné par le management, l'agilité et la gestion des talents. Il est le fondateur et PDG de Moavis, une entreprise spécialisée dans les métiers du numérique et du digital, et cofondateur de Eazytraining, un centre de formation en agilité, Scrum, DevOps et Lean. Kevin s'est donné pour mission d'aider un million de personnes à adopter des pratiques agiles pour optimiser leur collaboration et leur efficacité.",
           showBio: false,
         },
         {

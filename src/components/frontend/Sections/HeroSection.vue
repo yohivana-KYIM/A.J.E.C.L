@@ -63,7 +63,11 @@ export default {
       typedText: "",
       fullText: "Bienvenue à l'AEJC ",
       currentImageIndex: 0,
-      images: ["/assets/img/bg-group2.jpg", "/assets/img/bg-group.jpg"],
+      images: [
+        "/assets/img/bg-group3.jpg",
+        "/assets/img/bg-group.jpg",
+        "/assets/img/bg-group2.jpg",
+      ],
       imageInterval: null,
       isTyping: false,
     };
