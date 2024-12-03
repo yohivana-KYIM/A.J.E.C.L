@@ -8,10 +8,12 @@
     <StatsSection />
 
     <ClientsSection />
-   
+
     <ServicesSection />
     <PortfolioSection />
     <GallerySection />
+    <etoile />
+
     <TestimonialsSection />
     <TeamSection />
 
@@ -32,7 +34,7 @@ import TestimonialsSection from "../components/frontend/Sections/TestimonialsSec
 import TeamSection from "../components/frontend/Sections/TeamSection.vue";
 import GallerySection from "../components/frontend/Sections/GallerySection.vue";
 import ContactSection from "../components/frontend/Sections/ContactSection.vue";
-
+import etoile from "../components/frontend/Sections/etoile.vue";
 export default {
   name: "Home",
   components: {
@@ -45,6 +47,7 @@ export default {
     TestimonialsSection,
     TeamSection,
     GallerySection,
+    etoile,
     ContactSection,
   },
 };
