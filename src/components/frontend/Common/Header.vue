@@ -2,7 +2,7 @@
   <header :class="['main-header', { scrolled: isScrolled }]">
     <div class="header-container">
       <div class="logo-container">
-        <a href="http://localhost:5173/" class="logo-link">
+        <a href="https://a-j-e-c-l.vercel.app/" class="logo-link">
           <img
             src="/assets/img/lyon.png"
             alt="AEJC Lyon Logo"
