@@ -6,12 +6,15 @@
     <HeroSection />
     <AboutSection />
     <StatsSection />
+
     <ClientsSection />
+    <GallerySection />
+
     <ServicesSection />
     <PortfolioSection />
     <TestimonialsSection />
     <TeamSection />
-    <!-- <GallerySection /> -->
+
     <ContactSection />
   </div>
 </template>
@@ -27,7 +30,7 @@ import ServicesSection from "../components/frontend/Sections/ServicesSection.vue
 import PortfolioSection from "../components/frontend/Sections/PortfolioSection.vue";
 import TestimonialsSection from "../components/frontend/Sections/TestimonialsSection.vue";
 import TeamSection from "../components/frontend/Sections/TeamSection.vue";
-//import GallerySection from "../components/frontend/Sections/GallerySection.vue";
+import GallerySection from "../components/frontend/Sections/GallerySection.vue";
 import ContactSection from "../components/frontend/Sections/ContactSection.vue";
 
 export default {
@@ -41,7 +44,7 @@ export default {
     PortfolioSection,
     TestimonialsSection,
     TeamSection,
-    // GallerySection,
+    GallerySection,
     ContactSection,
   },
 };
