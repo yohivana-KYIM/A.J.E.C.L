@@ -110,6 +110,24 @@ export default {
             "Ingénieur cloud chez Alteca basé à Lyon. Fondateur de Mixtebio, une marque de bijoux modernes. Musicien et producteur sous le pseudonyme mr_swagg_official. Travaille sur des projets stratégiques pour des clients comme le Crédit Agricole, combinant innovation technologique et créativité artistique.",
           isHovered: false,
         },
+        {
+          name: "Fabliola Stediane MEKOUO",
+          biography:
+            "Ingénieure QHSE en alternance & Membre active de l'AEJC. Nouvelle recrue de l'AEJC en 2024, Fabliola Stediane MEKOUO s'est rapidement imposée comme un pilier actif et créatif de l'association. Elle a joué un rôle clé au sein des commissions cuisine et artistique lors de la soirée culturelle, marquant les esprits par son dynamisme et son implication. Assidue à toutes les réunions importantes, elle a également été une force de proposition déterminante pour une organisation des festivités du 20 mai, fête nationale camerounaise en 2025. Son engagement et son talent ont été reconnus lors de la soirée culturelle du 16 novembre 2024, où elle a remporté le prestigieux Prix Yann, célébrant sa contribution exceptionnelle à la vie associative. En parallèle, Fabliola poursuit une carrière prometteuse en tant qu'ingénieure QHSE chez EKIUM et prépare un Master QSE au CESI.",
+          isHovered: false,
+        },
+        {
+          name: "Joséphine Brenda Megnegue Tayo",
+          biography:
+            "Une jeune femme ambitieuse, alliant entrepreneuriat, élégance et expertise. Spécialisée dans la coiffure et l'esthétique à domicile, elle propose des services sur mesure, combinant son talent artistique et son souci du détail pour offrir une expérience unique à ses clientes. Lauréate du titre de Miss Défilé Traditionnel lors de la soirée culturelle 2024 organisée par son association, Joséphine incarne parfaitement la fusion entre tradition et modernité. Ce titre reflète son charisme et sa capacité à valoriser l'héritage culturel à travers son style et sa personnalité. En parallèle, elle excelle dans le domaine du QHSE (Sécurité, Qualité, Hygiène, Environnement), enrichissant son parcours académique et professionnel grâce à des expériences variées dans la gestion des risques et des normes. Résidant à Reims, elle est le parfait exemple d'une femme déterminée et polyvalente, poursuivant l'excellence dans tous les aspects de sa vie.",
+          isHovered: false,
+        },
+        {
+          name: "Damaris Arlette Nya Nana",
+          biography:
+            "Une communicatrice polyvalente, artiste musicienne et coiffeuse à domicile. Forte de 4 ans d'expérience en communication interne, digitale et audiovisuelle, elle allie créativité et sens de l'adaptation pour innover dans ses projets. Passionnée de musique, elle écrit et interprète ses propres compositions, captivant son public par son talent artistique. En parallèle, elle offre des services de coiffure personnalisés à domicile, mettant son savoir-faire au service de la beauté et du bien-être de ses clients. Damaris incarne un équilibre unique entre professionnalisme, créativité et engagement envers les autres.",
+          isHovered: false,
+        },
       ],
       selectedEntrepreneur: null,
       selectedEntrepreneurIndex: null,
