@@ -109,7 +109,6 @@
         </p>
       </div>
 
-      <!-- Universal scroll-to-top button -->
       <button
         v-show="showScrollButton"
         @click="scrollToTop"
@@ -131,7 +130,7 @@ export default {
   setup() {
     const showScrollButton = ref(false);
     const email = ref("");
-    const scrollThreshold = 300; // Pixels to scroll before showing button
+    const scrollThreshold = 300;
 
     const footerSections = [
       {
@@ -147,12 +146,8 @@ export default {
         ],
       },
       {
-        title: "Services",
-        items: ["Web Design", "Web Development", "Marketing", "Graphic Design"],
-      },
-      {
         title: "Légal",
-        items: ["Conditions d'utilisation", "Politique de confidentialité"],
+        items: ["statut", "le règlement intérieur"],
       },
     ];
 
@@ -223,12 +218,10 @@ export default {
 
         Contact: "/#contact",
         "Calendrier des activités": "/calendrier",
-        "Web Design": "/#services",
-        "Web Development": "/#services",
-        Marketing: "/#services",
-        "Graphic Design": "/#services",
-        "Conditions d'utilisation": "/legal/terms",
-        "Politique de confidentialité": "/legal/privacy",
+        statut:
+          "https://drive.google.com/file/d/1CNjUcIt8gNUpGO2dVpquLGAKKfsNCSXM/view?usp=drivesdk",
+        "le règlement intérieur":
+          "https://docs.google.com/document/d/1RVjB-C8nZYSn4ogtizcu76tqdQ9xjcL_7tWwSjXSkGo/edit?usp=drivesdk",
       };
       return sectionMap[item] || "#";
     };

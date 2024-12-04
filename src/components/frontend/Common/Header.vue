@@ -2,7 +2,7 @@
   <header :class="['main-header', { scrolled: isScrolled }]">
     <div class="header-container">
       <div class="logo-container">
-        <a href="https://a-j-e-c-l.vercel.app/" class="logo-link">
+        <a href="/" class="logo-link">
           <img
             src="/assets/img/lyon.png"
             alt="AEJC Lyon Logo"
@@ -176,7 +176,7 @@ export default {
       menuItems: [
         { label: "Accueil", href: "#hero" },
         { label: "À propos", href: "#about" },
-        { label: "Services", href: "#services" },
+        { label: "Services", href: "#Services" },
         { label: "Evenements", href: "#portfolio" },
         { label: "Équipe", href: "#team" },
         { label: "Contact", href: "#contact" },
