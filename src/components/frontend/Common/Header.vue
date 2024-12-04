@@ -1,5 +1,7 @@
+// Header.vue
 <template>
   <header :class="['main-header', { scrolled: isScrolled }]">
+    <!-- Le reste du template reste identique à votre code original -->
     <div class="header-container">
       <div class="logo-container">
         <a href="/" class="logo-link">
@@ -16,14 +18,13 @@
         <ul class="nav-list">
           <li v-for="(item, index) in menuItems" :key="index" class="nav-item">
             <template v-if="!item.children">
-              <!-- Use router-link for the new menu item -->
-              <router-link
-                :to="item.href"
+              <a
+                :href="item.href"
                 :class="['nav-link', { active: activeSection === item.href }]"
-                @click="handleNavClick(item.href)"
+                @click.prevent="scrollToSection(item.href)"
               >
                 {{ item.label }}
-              </router-link>
+              </a>
             </template>
 
             <template v-else>
@@ -59,9 +60,13 @@
                     v-for="(child, childIndex) in item.children"
                     :key="childIndex"
                   >
-                    <a :href="child.href" class="dropdown-link">{{
-                      child.label
-                    }}</a>
+                    <a 
+                      :href="child.href" 
+                      class="dropdown-link"
+                      @click.prevent="scrollToSection(child.href)"
+                    >
+                      {{ child.label }}
+                    </a>
                   </li>
                 </ul>
               </div>
@@ -92,14 +97,13 @@
               class="mobile-nav-item"
             >
               <template v-if="!item.children">
-                <!-- Use router-link for the new mobile menu item -->
-                <router-link
-                  :to="item.href"
+                <a
+                  :href="item.href"
                   class="mobile-nav-link"
-                  @click="handleMobileNavClick(item.href)"
+                  @click.prevent="handleMobileNavClick(item.href)"
                 >
                   {{ item.label }}
-                </router-link>
+                </a>
               </template>
 
               <template v-else>
@@ -138,7 +142,7 @@
                         <a
                           :href="child.href"
                           class="mobile-dropdown-link"
-                          @click="handleMobileNavClick(child.href)"
+                          @click.prevent="handleMobileNavClick(child.href)"
                         >
                           {{ child.label }}
                         </a>
@@ -176,28 +180,78 @@ export default {
       menuItems: [
         { label: "Accueil", href: "#hero" },
         { label: "À propos", href: "#about" },
-        { label: "Services", href: "#Services" },
+        { label: "Services", href: "#services" },
         { label: "Evenements", href: "#portfolio" },
         { label: "Équipe", href: "#team" },
         { label: "Contact", href: "#contact" },
-        { label: "Calendrier des activités ", href: "/calendrier" }, // New menu item
+        { label: "Calendrier des activités", href: "/calendrier" },
       ],
     };
   },
   mounted() {
     window.addEventListener("scroll", this.handleScroll);
+    window.addEventListener("scroll", this.updateActiveSection);
     this.handleScroll();
+    
+    // Set initial active section based on URL hash
+    const hash = window.location.hash;
+    if (hash) {
+      this.activeSection = hash;
+      this.$nextTick(() => {
+        this.scrollToSection(hash);
+      });
+    }
   },
   beforeUnmount() {
     window.removeEventListener("scroll", this.handleScroll);
+    window.removeEventListener("scroll", this.updateActiveSection);
   },
   methods: {
     handleScroll() {
-      const currentScrollPosition =
-        window.pageYOffset || document.documentElement.scrollTop;
+      this.isScrolled = window.pageYOffset > 50;
+    },
+    scrollToSection(href) {
+      // Handle special case for /calendrier route
+      if (href === '/calendrier') {
+        this.$router.push('/calendrier');
+        return;
+      }
 
-      // Update scrolled state for styling
-      this.isScrolled = currentScrollPosition > 50;
+      const elementId = href.replace('#', '');
+      const element = document.getElementById(elementId);
+      
+      if (element) {
+        const headerOffset = 80; // Height of fixed header
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+        
+        this.activeSection = href;
+        if (this.isMenuOpen) {
+          this.toggleMenu();
+        }
+      }
+    },
+    updateActiveSection() {
+      const sections = this.menuItems.map(item => item.href.replace('#', ''));
+      const headerOffset = 100; // Adjust based on your header height
+
+      for (const section of sections) {
+        if (section === 'calendrier') continue;
+        
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= headerOffset && rect.bottom > headerOffset) {
+            this.activeSection = `#${section}`;
+            break;
+          }
+        }
+      }
     },
     toggleMenu() {
       this.isMenuOpen = !this.isMenuOpen;
@@ -221,17 +275,25 @@ export default {
       }
     },
     handleNavClick(href) {
-      this.activeSection = href;
-      this.isMenuOpen = false;
-      document.body.style.overflow = "";
+      this.scrollToSection(href);
     },
     handleMobileNavClick(href) {
-      this.handleNavClick(href);
+      this.scrollToSection(href);
       this.openMobileDropdowns = [];
     },
   },
 };
 </script>
+
+
+
+
+
+
+
+
+
+
 
 <style scoped>
 body {
