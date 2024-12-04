@@ -85,32 +85,31 @@ export default {
         {
           name: "Fabliola Stediane MEKOUO",
           biography:
-            "Ingénieure QHSE en alternance & Membre active de l'AEJC...\n" +
-            "Prix Yann 2024, elle brille par sa créativité et son dynamisme.",
+            "Ingénieure QHSE en alternance & Membre active de l'AEJC\n\nNouvelle recrue de l'AEJC en 2024, Fabliola Stediane MEKOUO s'est rapidement imposée comme un pilier actif et créatif de l'association. Elle a joué un rôle clé au sein des commissions cuisine et artistique lors de la soirée culturelle, marquant les esprits par son dynamisme et son implication. Assidue à toutes les réunions importantes, elle a également été une force de proposition déterminante pour une organisation des festivités du 20 mai, fête nationale camerounaise en 2025.\n\nSon engagement et son talent ont été reconnus lors de la soirée culturelle du 16 novembre 2024, où elle a remporté le prestigieux Prix Yann, célébrant sa contribution exceptionnelle à la vie associative.\n\nEn parallèle, Fabliola poursuit une carrière prometteuse en tant qu’ingénieure QHSE chez EKIUM et prépare un Master QSE au CESI.",
           isHovered: false,
         },
         {
           name: "Serge Onana",
           biography:
-            "Administrateur système chez Fiducial, Serge se distingue par son intelligence et son sens critique...",
+            "Administrateur système chez Fiducial, Serge Onana a récemment rejoint l’AEJC et n’a pas tardé à devenir membre actif. Discret et sobre, il contribue avec intelligence et générosité, tant sur le plan intellectuel que financier, au développement de l’association. Reconnu pour son sens critique, son professionnalisme et son style élégant, Serge s’impose rapidement comme une étoile montante au sein de l’AEJC. Il est le vice-réalisateur du sketch sur la dot, présenté lors de la soirée culturelle 2024, et occupe également le rôle de chargé de communication de l’association sur Instagram.",
           isHovered: false,
         },
         {
           name: "Nemangou Arthur",
           biography:
-            "En Mastère en IA à l’IA School, il est reconnu pour sa créativité et son expertise...",
+            "En pleine préparation de notre grande soirée culturelle, Arthur s’est rapidement distingué par son engagement, sa créativité et son expertise.\n\nActuellement en Mastère en Intelligence Artificielle et Management à l’IA School à Meyzieu, il apporte avec lui une riche expérience associative acquise au Cameroun, notamment dans le domaine des arts visuels, du développement web, et de la gestion technique. Polyvalent et stratège, il a été un pilier essentiel dans l’organisation de notre événement, prenant également le rôle de DJ pour cette soirée.\n\nArthur incarne l’alliance parfaite entre innovation et action. Qu’il s’agisse de gestion technique, de graphisme ou encore d’animation, il excelle par sa capacité à comprendre les besoins et à apporter des solutions concrètes.\n\nNous sommes fiers de l’accueillir parmi nous et impatients de voir l’impact qu’il continuera d’avoir dans notre communauté. Un grand merci à toi, Arthur, pour ta contribution précieuse et ton dynamisme contagieux. 🌟🎶",
           isHovered: false,
         },
         {
           name: "Damaris Arlette Nya Nana",
           biography:
-            "Communicatrice, chanteuse et coiffeuse à domicile, Damaris est une étoile aux multiples talents...",
+            "Étoile montante de l'association, Damaris Arlette Nya Nana est une communicatrice polyvalente, artiste musicienne et coiffeuse à domicile. Forte de 4 ans d'expérience en communication interne, digitale et audiovisuelle, elle se distingue par sa créativité et sa capacité à innover dans chacun de ses projets.\n\nPassionnée par la musique, Damaris est également une chanteuse à la tessiture riche et une auteure-compositrice talentueuse. Ses interprétations, portées par une maîtrise exceptionnelle de la modulation et du vibrato, séduisent et captivent son auditoire. Pressentie pour être l'impresario de la prochaine soirée culturelle, elle incarne à la fois éloquence, talent artistique et engagement, tout en offrant un service de coiffure à domicile qui allie soin et esthétisme.",
           isHovered: false,
         },
         {
           name: "Joséphine Brenda Megnegue Tayo",
           biography:
-            "Spécialiste en coiffure et esthétique, elle incarne l'élégance et le charisme...",
+            "Étoile montante de l'association, Joséphine Brenda Megnegue Tayo est une jeune femme ambitieuse et talentueuse, incarnant élégance, charisme et expertise. Spécialisée dans la coiffure et l’esthétique à domicile, elle se distingue par son sens artistique et son souci du détail, offrant à ses clientes des services sur mesure et une expérience unique.\n\nLors de la soirée culturelle 2024 de l'association, elle a marqué les esprits en jouant le rôle de sosie de la fiancée dans un sketch, captivant le public par son charisme et sa finesse d’interprétation. Ce rôle, mêlant humour et subtilité, a révélé sa capacité à s'investir avec passion et authenticité, tout en démontrant un sens aigu de la collaboration et de l’organisation.\n\nAvec son dynamisme et son sens des responsabilités, Joséphine est pressentie pour jouer un rôle clé dans l'organisation de la prochaine soirée culturelle. Son caractère déterminé et sa capacité à fédérer les autres en font une candidate idéale pour superviser la coordination des équipes ou l'élaboration du programme artistique. Résidant à Lyon, elle incarne une femme polyvalente, créative et inspirante, poursuivant l’excellence dans tout ce qu’elle entreprend.",
           isHovered: false,
         },
       ],
