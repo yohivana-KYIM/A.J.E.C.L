@@ -160,7 +160,7 @@ export default {
       {
         name: "Instagram",
         icon: "bi bi-instagram",
-        link: "https://www.instagram.com/asso_des_etudiants_kmer_lyon/",
+        link: " https://www.instagram.com/aejc_lyon",
       },
     ];
 

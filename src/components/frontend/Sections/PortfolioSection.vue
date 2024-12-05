@@ -2,7 +2,7 @@
   <section id="portfolio" class="portfolio section">
     <!-- Section Title -->
     <div class="container section-title" data-aos="fade-up">
-      <h2 class="text-center">Evénement</h2>
+      <h2 class="text-center">Evénements</h2>
       <div class="title-underline d-flex justify-content-center">
         <div class="green-line me-2 line-animated"></div>
         <div class="red-line me-2 line-animated"></div>
@@ -106,6 +106,11 @@ export default {
         { category: "filter-books", label: "Soirée culturelle" },
         { category: "filter-patinage", label: "patinage" },
         { category: "filter-ludique", label: "ludique" },
+        { category: "filter-bibliotheque", label: "Bibliothèque" },
+
+        { category: "filter-apero", label: "Apéro" },
+
+        { category: "filter-afro", label: "Afro Conférences" },
       ],
       portfolioItems: [
         {
@@ -254,6 +259,194 @@ export default {
 
           image: "/assets/img/portfolio/ludique-3.jpg",
         },
+
+        {
+          id: 19,
+
+          title: "Bibliothèque 1",
+
+          description:
+            "Visite de la bibliothèque avec des activités de lecture.",
+
+          category: "filter-bibliotheque",
+
+          image: "/assets/img/portfolio/bibliothèque-1.jpg",
+        },
+
+        {
+          id: 20,
+
+          title: "Bibliothèque 2",
+
+          description: "Atelier de lecture pour enfants.",
+
+          category: "filter-bibliotheque",
+
+          image: "/assets/img/portfolio/bibliothèque-2.jpg",
+        },
+
+        {
+          id: 21,
+
+          title: "Bibliothèque 3",
+
+          description: "Séance de dédicace avec un auteur local.",
+
+          category: "filter-bibliotheque",
+
+          image: "/assets/img/portfolio/bibliothèque-3.jpg",
+        },
+
+        {
+          id: 22,
+
+          title: "Bibliothèque 4",
+
+          description: "Club de lecture mensuel.",
+
+          category: "filter-bibliotheque",
+
+          image: "/assets/img/portfolio/bibliothèque-4.jpg",
+        },
+
+        {
+          id: 23,
+
+          title: "Bibliothèque 5",
+
+          description: "Exposition de livres anciens.",
+
+          category: "filter-bibliotheque",
+
+          image: "/assets/img/portfolio/bibliothèque-5.jpg",
+        },
+
+        {
+          id: 24,
+
+          title: "Bibliothèque 6",
+
+          description: "Atelier d'écriture créative.",
+
+          category: "filter-bibliotheque",
+
+          image: "/assets/img/portfolio/bibliothèque-6.jpg",
+        },
+
+        {
+          id: 25,
+
+          title: "Bibliothèque 7",
+
+          description: "Séance de contes pour enfants.",
+
+          category: "filter-bibliotheque",
+
+          image: "/assets/img/portfolio/bibliothèque-7.jpg",
+        },
+
+        {
+          id: 26,
+
+          title: "Bibliothèque 8",
+
+          description: "Rencontre avec un poète.",
+
+          category: "filter-bibliotheque",
+
+          image: "/assets/img/portfolio/bibliothèque-8.jpg",
+        },
+
+        {
+          id: 27,
+
+          title: "Bibliothèque 9",
+
+          description: "Journée portes ouvertes.",
+
+          category: "filter-bibliotheque",
+
+          image: "/assets/img/portfolio/bibliothèque-9.jpg",
+        },
+
+        // Éléments pour l'apéro
+
+        {
+          id: 28,
+
+          title: "Apéro 1",
+
+          description: "Soirée apéritif avec des spécialités locales.",
+
+          category: "filter-apero",
+
+          image: "/assets/img/portfolio/apero-1.jpg",
+        },
+
+        {
+          id: 29,
+
+          title: "Apéro 2",
+
+          description: "Dégustation de vins et fromages.",
+
+          category: "filter-apero",
+
+          image: "/assets/img/portfolio/apero-2.jpg",
+        },
+
+        {
+          id: 30,
+
+          title: "Apéro 3",
+
+          description: "Apéro musical avec des artistes locaux.",
+
+          category: "filter-apero",
+
+          image: "/assets/img/portfolio/apero-3.jpg",
+        },
+        {
+
+id: 31,
+
+title: "Afro Conférences 1",
+
+description: "Discussion sur l'impact culturel des diasporas.",
+
+category: "filter-afro",
+
+image: "/assets/img/portfolio/afroconférences-1.jpg",
+
+},
+
+{
+
+id: 32,
+
+title: "Afro Conférences 2",
+
+description: "Atelier sur les traditions africaines.",
+
+category: "filter-afro",
+
+image: "/assets/img/portfolio/afroconférences-2.jpg",
+
+},
+
+{
+
+id: 33,
+
+title: "Afro Conférences 3",
+
+description: "Conférence sur l'histoire et l'identité afro.",
+
+category: "filter-afro",
+
+image: "/assets/img/portfolio/afroconférences-3.jpg",
+
+},
       ],
       filteredPortfolio: [],
       searchTerm: "",
