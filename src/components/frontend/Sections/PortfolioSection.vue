@@ -104,7 +104,7 @@ export default {
         { category: "filter-product", label: "acceuil des nouveaux" },
         { category: "filter-branding", label: "Picnic" },
         { category: "filter-books", label: "Soirée culturelle" },
-        { category: "filter-patrimoine", label: "patrimoine" },
+        { category: "filter-patinage", label: "patinage" },
         { category: "filter-ludique", label: "ludique" },
       ],
       portfolioItems: [
@@ -194,38 +194,29 @@ export default {
         },
         {
           id: 13,
-
-          title: "Journée du patrimoine 1",
-
-          description: "Visite des sites historiques de la ville",
-
-          category: "filter-patrimoine",
-
-          image: "/assets/img/portfolio/patrimoine-1.jpg",
+          title: "Journée du Patinage 1",
+          description:
+            "Initiation au patinage en plein air sur une piste spécialement aménagée, suivie d'une visite des sites historiques emblématiques de la ville.",
+          category: "filter-patinage",
+          image: "/assets/img/portfolio/patinage-1.jpg",
         },
 
         {
           id: 14,
-
-          title: "Journée du patrimoine 2",
-
-          description: "Découverte des traditions locales",
-
-          category: "filter-patrimoine",
-
-          image: "/assets/img/portfolio/patrimoine-2.jpg",
+          title: "Journée du Patinage 2",
+          description:
+            "Patinage artistique en groupe avec encadrement professionnel et découverte des traditions locales à travers des animations culturelles.",
+          category: "filter-patinage",
+          image: "/assets/img/portfolio/patinage-2.jpg",
         },
 
         {
           id: 15,
-
-          title: "Journée du patrimoine 3",
-
-          description: "Atelier sur l'histoire de la ville",
-
-          category: "filter-patrimoine",
-
-          image: "/assets/img/portfolio/patrimoine-3.jpg",
+          title: "Journée du Patinage 3",
+          description:
+            "Atelier pratique sur l'histoire du patinage, suivi d'une démonstration en direct et d'une séance de patinage libre.",
+          category: "filter-patinage",
+          image: "/assets/img/portfolio/patinage-3.jpg",
         },
 
         {
