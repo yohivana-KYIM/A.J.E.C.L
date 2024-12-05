@@ -17,7 +17,7 @@
     <!-- End Section Title -->
 
     <div class="container-fluid px-lg-5">
-      <div 
+      <div
         class="isotope-layout"
         data-default-filter="*"
         data-layout="masonry"
@@ -32,7 +32,10 @@
           <li
             v-for="filter in filters"
             :key="filter.category"
-            :class="['mx-2 mb-2 px-3 py-2', activeFilter === filter.category ? 'filter-active' : '']"
+            :class="[
+              'mx-2 mb-2 px-3 py-2',
+              activeFilter === filter.category ? 'filter-active' : '',
+            ]"
             @click="filterPortfolio(filter.category)"
           >
             {{ filter.label }}
@@ -51,13 +54,17 @@
             class="col-12 col-sm-6 col-md-4 col-lg-3 portfolio-item isotope-item"
             :class="item.category"
           >
-            <div class="portfolio-content h-100 position-relative overflow-hidden rounded-3 shadow-sm">
-              <img 
-                :src="item.image" 
-                class="img-fluid w-100 h-100 object-fit-cover" 
-                :alt="item.title" 
+            <div
+              class="portfolio-content h-100 position-relative overflow-hidden rounded-3 shadow-sm"
+            >
+              <img
+                :src="item.image"
+                class="img-fluid w-100 h-100 object-fit-cover"
+                :alt="item.title"
               />
-              <div class="portfolio-info position-absolute bottom-0 start-0 w-100 p-3">
+              <div
+                class="portfolio-info position-absolute bottom-0 start-0 w-100 p-3"
+              >
                 <h4 class="text-white mb-2">{{ item.title }}</h4>
                 <p class="text-white-50 mb-3">{{ item.description }}</p>
                 <div class="d-flex">
@@ -90,13 +97,15 @@
 export default {
   data() {
     return {
-      activeFilter: '*',
+      activeFilter: "*",
       filters: [
-        { category: '*', label: 'All' },
-        { category: 'filter-app', label: 'Assemblée générale' },
-        { category: 'filter-product', label: 'Soirée quizz' },
-        { category: 'filter-branding', label: 'Picnic' },
-        { category: 'filter-books', label: 'Soirée culturelle' }
+        { category: "*", label: "All" },
+        { category: "filter-app", label: "Assemblée générale" },
+        { category: "filter-product", label: "acceuil des nouveaux" },
+        { category: "filter-branding", label: "Picnic" },
+        { category: "filter-books", label: "Soirée culturelle" },
+        { category: "filter-patrimoine", label: "patrimoine" },
+        { category: "filter-ludique", label: "ludique" },
       ],
       portfolioItems: [
         {
@@ -108,7 +117,7 @@ export default {
         },
         {
           id: 2,
-          title: "Soirée quizz",
+          title: "acceuil des nouveaux",
           description: "Testez vos connaissances",
           category: "filter-product",
           image: "/assets/img/portfolio/product-1.jpg",
@@ -136,7 +145,7 @@ export default {
         },
         {
           id: 6,
-          title: "Soirée quizz",
+          title: "acceuil des nouveaux",
           description: "Challenge intellectuel",
           category: "filter-product",
           image: "/assets/img/portfolio/product-2.jpg",
@@ -164,7 +173,7 @@ export default {
         },
         {
           id: 10,
-          title: "Soirée quizz",
+          title: "acceuil des nouveaux",
           description: "Compétition amicale",
           category: "filter-product",
           image: "/assets/img/portfolio/product-3.jpg",
@@ -182,26 +191,98 @@ export default {
           description: "Échange et découverte",
           category: "filter-books",
           image: "/assets/img/portfolio/books-3.jpg",
-        }
+        },
+        {
+          id: 13,
+
+          title: "Journée du patrimoine 1",
+
+          description: "Visite des sites historiques de la ville",
+
+          category: "filter-patrimoine",
+
+          image: "/assets/img/portfolio/patrimoine-1.jpg",
+        },
+
+        {
+          id: 14,
+
+          title: "Journée du patrimoine 2",
+
+          description: "Découverte des traditions locales",
+
+          category: "filter-patrimoine",
+
+          image: "/assets/img/portfolio/patrimoine-2.jpg",
+        },
+
+        {
+          id: 15,
+
+          title: "Journée du patrimoine 3",
+
+          description: "Atelier sur l'histoire de la ville",
+
+          category: "filter-patrimoine",
+
+          image: "/assets/img/portfolio/patrimoine-3.jpg",
+        },
+
+        {
+          id: 16,
+
+          title: "Atelier ludique 1",
+
+          description: "Activités de groupe pour tous les âges",
+
+          category: "filter-ludique",
+
+          image: "/assets/img/portfolio/ludique-1.jpg",
+        },
+
+        {
+          id: 17,
+
+          title: "Atelier ludique 2",
+
+          description: "Jeux de société et défis",
+
+          category: "filter-ludique",
+
+          image: "/assets/img/portfolio/ludique-2.jpg",
+        },
+
+        {
+          id: 18,
+
+          title: "Atelier ludique 3",
+
+          description: "Compétitions amicales en plein air",
+
+          category: "filter-ludique",
+
+          image: "/assets/img/portfolio/ludique-3.jpg",
+        },
       ],
       filteredPortfolio: [],
-      searchTerm: ''
+      searchTerm: "",
     };
   },
-  
+
   created() {
     this.filteredPortfolio = this.portfolioItems;
   },
-  
+
   computed: {
     filteredAndSearchedPortfolio() {
-      return this.filteredPortfolio.filter(item => 
-        item.title.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
-        item.description.toLowerCase().includes(this.searchTerm.toLowerCase())
+      return this.filteredPortfolio.filter(
+        (item) =>
+          item.title.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
+          item.description.toLowerCase().includes(this.searchTerm.toLowerCase())
       );
-    }
+    },
   },
-  
+
   methods: {
     filterPortfolio(category) {
       this.activeFilter = category;
@@ -213,19 +294,20 @@ export default {
         );
       }
     },
-    
+
     searchEvents() {
-      this.filteredPortfolio = this.portfolioItems.filter(item => 
-        item.title.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
-        item.description.toLowerCase().includes(this.searchTerm.toLowerCase())
+      this.filteredPortfolio = this.portfolioItems.filter(
+        (item) =>
+          item.title.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
+          item.description.toLowerCase().includes(this.searchTerm.toLowerCase())
       );
     },
-    
+
     resetSearch() {
-      this.searchTerm = '';
+      this.searchTerm = "";
       this.filteredPortfolio = this.portfolioItems;
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -266,9 +348,15 @@ export default {
   transition: width 0.3s ease;
 }
 
-.green-line { background-color: #28a745; }
-.red-line { background-color: #dc3545; }
-.yellow-line { background-color: #ffc107; }
+.green-line {
+  background-color: #28a745;
+}
+.red-line {
+  background-color: #dc3545;
+}
+.yellow-line {
+  background-color: #ffc107;
+}
 
 .portfolio-content {
   transition: transform 0.3s ease-in-out;
@@ -279,11 +367,11 @@ export default {
 }
 
 .portfolio-info {
-  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
   transition: all 0.3s ease;
 }
 
 .portfolio-content:hover .portfolio-info {
-  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
 }
 </style>
