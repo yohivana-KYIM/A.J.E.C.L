@@ -44,67 +44,15 @@
     <div class="events-filter">
       <h2>Filtrer les événements</h2>
       <form id="event-filter-form">
-        <label
-          ><input type="checkbox" name="eventType" value="holidays" checked />
-          Jours Fériés</label
-        >
-        <label
-          ><input
-            type="checkbox"
-            name="eventType"
-            value="optimalDays"
-            checked
-          />
-          Jours à Poser</label
-        >
-        <label
-          ><input type="checkbox" name="eventType" value="worldDays" checked />
-          Journées Mondiales</label
-        >
-        <label
-          ><input
-            type="checkbox"
-            name="eventType"
-            value="cameroonDays"
-            checked
-          />
-          Fêtes Camerounaises</label
-        >
-        <label
-          ><input type="checkbox" name="eventType" value="lyonDays" checked />
-          Fêtes Lyonnaises</label
-        >
-        <label
-          ><input
-            type="checkbox"
-            name="eventType"
-            value="culturalDays"
-            checked
-          />
-          Journées Culturelles</label
-        >
-        <label
-          ><input
-            type="checkbox"
-            name="eventType"
-            value="africanDays"
-            checked
-          />
-          Journées Africaines</label
-        >
-        <label
-          ><input type="checkbox" name="eventType" value="sportsDays" checked />
-          Compétitions Sportives</label
-        >
-        <label
-          ><input
-            type="checkbox"
-            name="eventType"
-            value="userCustomDays"
-            checked
-          />
-          Événements Personnalisés</label
-        >
+        <label><input type="checkbox" name="eventType" value="holidays" checked /> Jours Fériés</label>
+        <label><input type="checkbox" name="eventType" value="optimalDays" checked /> Jours à Poser</label>
+        <label><input type="checkbox" name="eventType" value="worldDays" checked /> Journées Mondiales</label>
+        <label><input type="checkbox" name="eventType" value="cameroonDays" checked /> Fêtes Camerounaises</label>
+        <label><input type="checkbox" name="eventType" value="lyonDays" checked /> Fêtes Lyonnaises</label>
+        <label><input type="checkbox" name="eventType" value="culturalDays" checked /> Journées Culturelles</label>
+        <label><input type="checkbox" name="eventType" value="africanDays" checked /> Journées Africaines</label>
+        <label><input type="checkbox" name="eventType" value="sportsDays" checked /> Compétitions Sportives</label>
+        <label><input type="checkbox" name="eventType" value="userCustomDays" checked /> Événements Personnalisés</label>
         <button type="button" id="apply-filters">Appliquer</button>
       </form>
     </div>
@@ -117,42 +65,15 @@
   <div class="legend">
     <h2>Légende des Événements</h2>
     <ul>
-      <li>
-        <span class="legend-color holiday"></span> Jours fériés : Noël, Nouvel
-        An, Lundi de Pâques, etc.
-      </li>
-      <li>
-        <span class="legend-color optimal"></span> Jours optimaux (Ponts) : Pont
-        après le 1er mai, 8 mai, etc.
-      </li>
-      <li>
-        <span class="legend-color world-day"></span> Journées Mondiales :
-        Journée Mondiale de la Santé, Journée du Diabète, etc.
-      </li>
-      <li>
-        <span class="legend-color cameroon-day"></span> Journées Camerounaises :
-        Fête de la Jeunesse, Fête Nationale, etc.
-      </li>
-      <li>
-        <span class="legend-color lyon-day"></span> Festivals Lyonnais : Nuits
-        de Fourvière, Fête des Lumières, etc.
-      </li>
-      <li>
-        <span class="legend-color cultural-day"></span> Journées Culturelles :
-        Journée de la Francophonie, Fête de la Musique, etc.
-      </li>
-      <li>
-        <span class="legend-color african-day"></span> Journées Africaines :
-        Journée de l'Afrique, Journée de l'Éducation, etc.
-      </li>
-      <li>
-        <span class="legend-color sports-day"></span> Compétitions Sportives :
-        Jeux Olympiques, CAN, Coupe du Monde, etc.
-      </li>
-      <li>
-        <span class="legend-color user-custom-day"></span> Jours de
-        l'association
-      </li>
+      <li><span class="legend-color holiday"></span> Jours fériés : Noël, Nouvel An, Lundi de Pâques, etc.</li>
+      <li><span class="legend-color optimal"></span> Jours optimaux (Ponts) : Pont après le 1er mai, 8 mai, etc.</li>
+      <li><span class="legend-color world-day"></span> Journées Mondiales : Journée Mondiale de la Santé, Journée du Diabète, etc.</li>
+      <li><span class="legend-color cameroon-day"></span> Journées Camerounaises : Fête de la Jeunesse, Fête Nationale, etc.</li>
+      <li><span class="legend-color lyon-day"></span> Festivals Lyonnais : Nuits de Fourvière, Fête des Lumières, etc.</li>
+      <li><span class="legend-color cultural-day"></span> Journées Culturelles : Journée de la Francophonie, Fête de la Musique, etc.</li>
+      <li><span class="legend-color african-day"></span> Journées Africaines : Journée de l'Afrique, Journée de l'Éducation, etc.</li>
+      <li><span class="legend-color sports-day"></span> Compétitions Sportives : Jeux Olympiques, CAN, Coupe du Monde, etc.</li>
+      <li><span class="legend-color user-custom-day"></span> Jours de l'association</li>
     </ul>
   </div>
 
@@ -161,25 +82,14 @@
   <section id="readme">
     <h2>README - Gestionnaire de Calendrier et Événements</h2>
     <p>
-      Bienvenue dans l'application interactive de gestion de calendriers et
-      d'événements. Ce projet permet de visualiser des calendriers mensuels,
-      d'ajouter des événements personnalisés, de filtrer les événements par
-      catégories et de gérer des récurrences complexes.
+      Bienvenue dans l'application interactive de gestion de calendriers et d'événements. Ce projet permet de visualiser des calendriers mensuels, d'ajouter des événements personnalisés, de filtrer les événements par catégories et de gérer des récurrences complexes.
     </p>
 
     <h3>Fonctionnalités principales</h3>
     <ul>
-      <li>
-        <strong>Affichage des calendriers :</strong> Calendriers mensuels de
-        décembre 2024 à décembre 2025 avec des événements marqués par
-        catégories.
-      </li>
-      <li>
-        <strong>Gestion des événements personnalisés :</strong> Ajoutez des
-        événements uniques ou récurrents avec des options flexibles.
-      </li>
-      <li>
-        <strong>Types de récurrences :</strong>
+      <li><strong>Affichage des calendriers :</strong> Calendriers mensuels de décembre 2024 à décembre 2025 avec des événements marqués par catégories.</li>
+      <li><strong>Gestion des événements personnalisés :</strong> Ajoutez des événements uniques ou récurrents avec des options flexibles.</li>
+      <li><strong>Types de récurrences :</strong>
         <ul>
           <li>Chaque X semaines.</li>
           <li>Chaque X-ème jour du mois.</li>
@@ -188,55 +98,22 @@
           <li>Chaque dernier lundi, mardi, etc. du mois.</li>
         </ul>
       </li>
-      <li>
-        <strong>Filtres d'événements :</strong> Affichez uniquement les
-        catégories d'événements qui vous intéressent.
-      </li>
-      <li>
-        <strong>Notifications WhatsApp :</strong> Envoyez des rappels
-        automatiques aux responsables d'événements.
-      </li>
-      <li>
-        <strong>Exportation et importation :</strong> Sauvegardez ou chargez des
-        événements via des fichiers JSON.
-      </li>
-      <li>
-        <strong>Impression PDF :</strong> Exportez les calendriers et événements
-        sous forme de fichier PDF.
-      </li>
+      <li><strong>Filtres d'événements :</strong> Affichez uniquement les catégories d'événements qui vous intéressent.</li>
+      <li><strong>Notifications WhatsApp :</strong> Envoyez des rappels automatiques aux responsables d'événements.</li>
+      <li><strong>Exportation et importation :</strong> Sauvegardez ou chargez des événements via des fichiers JSON.</li>
+      <li><strong>Impression PDF :</strong> Exportez les calendriers et événements sous forme de fichier PDF.</li>
     </ul>
 
     <h3>Instructions d'utilisation</h3>
     <ol>
       <li>Ouvrez le fichier dans un navigateur web.</li>
-      <li>
-        Utilisez les boutons et formulaires pour gérer les calendriers et
-        événements :
-      </li>
+      <li>Utilisez les boutons et formulaires pour gérer les calendriers et événements :</li>
       <ul>
-        <li>
-          <strong>Ajouter un événement :</strong> Entrez une date, une
-          description et sélectionnez un type de récurrence (facultatif).
-        </li>
-        <li>
-          <strong>Notifier les responsables :</strong> Cliquez sur "Notifier les
-          Responsables" pour envoyer des rappels via WhatsApp (si les contacts
-          sont renseignés).
-        </li>
-        <li>
-          <strong>Appliquer des filtres :</strong> Sélectionnez ou
-          désélectionnez des catégories pour afficher uniquement les événements
-          pertinents.
-        </li>
-        <li>
-          <strong>Sauvegarder/Charger :</strong> Sauvegardez les données sous
-          forme de fichier JSON ou chargez un fichier pour restaurer des
-          événements précédents.
-        </li>
-        <li>
-          <strong>Imprimer en PDF :</strong> Cliquez sur "Imprimer le PDF" pour
-          exporter les calendriers et événements.
-        </li>
+        <li><strong>Ajouter un événement :</strong> Entrez une date, une description et sélectionnez un type de récurrence (facultatif).</li>
+        <li><strong>Notifier les responsables :</strong> Cliquez sur "Notifier les Responsables" pour envoyer des rappels via WhatsApp (si les contacts sont renseignés).</li>
+        <li><strong>Appliquer des filtres :</strong> Sélectionnez ou désélectionnez des catégories pour afficher uniquement les événements pertinents.</li>
+        <li><strong>Sauvegarder/Charger :</strong> Sauvegardez les données sous forme de fichier JSON ou chargez un fichier pour restaurer des événements précédents.</li>
+        <li><strong>Imprimer en PDF :</strong> Cliquez sur "Imprimer le PDF" pour exporter les calendriers et événements.</li>
       </ul>
     </ol>
 
@@ -244,50 +121,27 @@
     <ul>
       <li><strong>Jours fériés :</strong> Noël, Nouvel An, etc.</li>
       <li><strong>Jours à poser :</strong> Ponts et jours optimaux.</li>
-      <li>
-        <strong>Journées mondiales :</strong> Journée mondiale de la santé,
-        journée du diabète, etc.
-      </li>
-      <li>
-        <strong>Événements locaux :</strong> Fêtes lyonnaises, fêtes nationales
-        camerounaises.
-      </li>
-      <li>
-        <strong>Événements sportifs :</strong> Jeux Olympiques, Coupe du Monde,
-        etc.
-      </li>
-      <li>
-        <strong>Événements personnalisés :</strong> Ajoutez vos propres
-        événements avec des options flexibles.
-      </li>
+      <li><strong>Journées mondiales :</strong> Journée mondiale de la santé, journée du diabète, etc.</li>
+      <li><strong>Événements locaux :</strong> Fêtes lyonnaises, fêtes nationales camerounaises.</li>
+      <li><strong>Événements sportifs :</strong> Jeux Olympiques, Coupe du Monde, etc.</li>
+      <li><strong>Événements personnalisés :</strong> Ajoutez vos propres événements avec des options flexibles.</li>
     </ul>
 
     <h3>Notes importantes</h3>
     <ul>
-      <li>
-        Les événements récurrents sont calculés automatiquement selon les règles
-        choisies.
-      </li>
-      <li>
-        Les notifications WhatsApp nécessitent une connexion Internet et un
-        compte WhatsApp actif.
-      </li>
-      <li>
-        Les fichiers JSON doivent être correctement formatés pour être chargés
-        sans erreur.
-      </li>
+      <li>Les événements récurrents sont calculés automatiquement selon les règles choisies.</li>
+      <li>Les notifications WhatsApp nécessitent une connexion Internet et un compte WhatsApp actif.</li>
+      <li>Les fichiers JSON doivent être correctement formatés pour être chargés sans erreur.</li>
     </ul>
 
     <h3>Contributions</h3>
     <p>
-      Ce projet est open-source. N'hésitez pas à contribuer en proposant des
-      améliorations ou en signalant des problèmes.
+      Ce projet est open-source. N'hésitez pas à contribuer en proposant des améliorations ou en signalant des problèmes.
     </p>
 
     <h3>Contact</h3>
     <p>
-      Pour toute question ou demande d'assistance, contactez l'administrateur
-      via email ou WhatsApp.
+      Pour toute question ou demande d'assistance, contactez l'administrateur via email ou WhatsApp.
     </p>
   </section>
 </template>
@@ -297,46 +151,46 @@ const dayAbbreviations = ["Ln", "Ma", "Me", "Je", "Ve", "Sa", "Di"];
 let userCustomDays = {};
 
 let holidays = {
-  "2024-12-25": "Noël",
-  "2025-01-01": "Nouvel An",
-  "2025-04-21": "Lundi de Pâques",
-  "2025-05-01": "Fête du Travail",
-  "2025-05-08": "Victoire 1945",
-  "2025-05-29": "Ascension",
-  "2025-06-09": "Lundi de Pentecôte",
-  "2025-07-14": "Fête Nationale",
-  "2025-08-15": "Assomption",
-  "2025-11-01": "Toussaint",
-  "2025-11-11": "Armistice 1918",
-  "2025-12-25": "Noël",
+  "2024-12-25": "<span class='white-text'>Noël</span>",
+  "2025-01-01": "<span class='white-text'>Nouvel An</span>",
+  "2025-04-21": "<span class='white-text'>Lundi de Pâques</span>",
+  "2025-05-01": "<span class='white-text'>Fête du Travail</span>",
+  "2025-05-08": "<span class='white-text'>Victoire 1945</span>",
+  "2025-05-29": "<span class='white-text'>Ascension</span>",
+  "2025-06-09": "<span class='white-text'>Lundi de Pentecôte</span>",
+  "2025-07-14": "<span class='white-text'>Fête Nationale</span>",
+  "2025-08-15": "<span class='white-text'>Assomption</span>",
+  "2025-11-01": "<span class='white-text'>Toussaint</span>",
+  "2025-11-11": "<span class='white-text'>Armistice 1918</span>",
+  "2025-12-25": "<span class='white-text'>Noël</span>",
 };
 
 let optimalDays = {
-  "2025-05-02": "Pont après le 1er mai",
-  "2025-05-09": "Pont après le 8 mai",
-  "2025-05-30": "Pont après l'Ascension",
-  "2025-11-10": "Pont avant l'Armistice",
-  "2024-12-26": "Pont après Noël",
-  "2025-12-26": "Pont après Noël",
+  "2025-05-02": "<span class='white-text'>Pont après le 1er mai</span>",
+  "2025-05-09": "<span class='white-text'>Pont après le 8 mai</span>",
+  "2025-05-30": "<span class='white-text'>Pont après l'Ascension</span>",
+  "2025-11-10": "<span class='white-text'>Pont avant l'Armistice</span>",
+  "2024-12-26": "<span class='white-text'>Pont après Noël</span>",
+  "2025-12-26": "<span class='white-text'>Pont après Noël</span>",
 };
 
 let worldDays = {
-  "2024-12-01": "Journée Mondiale de Lutte contre le SIDA",
-  "2025-02-04": "Journée Mondiale contre le Cancer",
-  "2025-02-11": "Journée Mondiale des Maladies Rares",
-  "2025-03-24": "Journée Mondiale de la Tuberculose",
-  "2025-04-07": "Journée Mondiale de la Santé",
-  "2025-05-17": "Journée Mondiale de l’Hypertension",
-  "2025-05-31": "Journée Mondiale sans Tabac",
-  "2025-06-14": "Journée Mondiale des Donneurs de Sang",
-  "2025-07-28": "Journée Mondiale contre l’Hépatite",
-  "2025-09-29": "Journée Mondiale du Cœur",
-  "2025-10-10": "Journée Mondiale de la Santé Mentale",
-  "2025-11-14": "Journée Mondiale du Diabète",
-  "2025-12-01": "Journée Mondiale de Lutte contre le SIDA",
-  "2025-01-20": "Journée Mondiale du Bilinguisme",
-  "2025-03-14": "Journée Mondiale du Commonwealth",
-  "2025-10-05": "Journée Mondiale des Enseignants (UNESCO)",
+  "2024-12-01": "<span class='white-text'>Journée Mondiale de Lutte contre le SIDA</span>",
+  "2025-02-04": "<span class='white-text'>Journée Mondiale contre le Cancer</span>",
+  "2025-02-11": "<span class='white-text'>Journée Mondiale des Maladies Rares</span>",
+  "2025-03-24": "<span class='white-text'>Journée Mondiale de la Tuberculose</span>",
+  "2025-04-07": "<span class='white-text'>Journée Mondiale de la Santé</span>",
+  "2025-05-17": "<span class='white-text'>Journée Mondiale de l’Hypertension</span>",
+  "2025-05-31": "<span class='white-text'>Journée Mondiale sans Tabac</span>",
+  "2025-06-14": "<span class='white-text'>Journée Mondiale des Donneurs de Sang</span>",
+  "2025-07-28": "<span class='white-text'>Journée Mondiale contre l’Hépatite</span>",
+  "2025-09-29": "<span class='white-text'>Journée Mondiale du Cœur</span>",
+  "2025-10-10": "<span class='white-text'>Journée Mondiale de la Santé Mentale</span>",
+  "2025-11-14": "<span class='white-text'>Journée Mondiale du Diabète</span>",
+  "2025-12-01": "<span class='white-text'>Journée Mondiale de Lutte contre le SIDA</span>",
+  "2025-01-20": "<span class='white-text'>Journée Mondiale du Bilinguisme</span>",
+  "2025-03-14": "<span class='white-text'>Journée Mondiale du Commonwealth</span>",
+  "2025-10-05": "<span class='white-text'>Journée Mondiale des Enseignants (UNESCO)</span>",
 };
 
 let cameroonDays = {
@@ -393,8 +247,7 @@ let lyonDays = {
 
 let africanDays = {
   "2025-01-24": "Journée Internationale de l'Éducation en Afrique",
-  "2025-03-25":
-    "Journée de Commémoration de l'Abolition de l'Esclavage (Afrique)",
+  "2025-03-25": "Journée de Commémoration de l'Abolition de l'Esclavage (Afrique)",
   "2025-05-25": "Journée de l'Afrique",
   "2025-06-16": "Journée de l'Enfant Africain",
   "2025-09-30": "Journée de la Traduction en Afrique",
@@ -414,31 +267,18 @@ let culturalDays = {
 };
 
 let sportsDays = {
-  // Jeux Olympiques de la Jeunesse 2024
   "2024-12-20": "Lancement des Jeux Olympiques de la Jeunesse (Dakar)",
   "2024-12-28": "Clôture des Jeux Olympiques de la Jeunesse (Dakar)",
-
-  // Coupe du Monde Féminine (FIFA) 2025
   "2025-06-14": "Lancement de la Coupe du Monde Féminine (FIFA)",
   "2025-07-20": "Clôture de la Coupe du Monde Féminine (FIFA)",
-
-  // Coupe du Monde de Rugby 2025
   "2025-09-07": "Lancement de la Coupe du Monde de Rugby",
   "2025-10-20": "Clôture de la Coupe du Monde de Rugby",
-
-  // Coupe d’Afrique des Nations (CAN) 2025
   "2025-01-13": "Lancement de la CAN 2025",
   "2025-02-11": "Clôture de la CAN 2025",
-
-  // Coupe d’Europe de Football (UEFA) 2025
   "2025-06-12": "Lancement de la Coupe d’Europe de Football",
   "2025-07-12": "Clôture de la Coupe d’Europe de Football",
-
-  // Coupe du Monde de Football (FIFA) 2026 (prévisionnel)
   "2026-06-08": "Lancement de la Coupe du Monde de Football (FIFA)",
   "2026-07-08": "Clôture de la Coupe du Monde de Football (FIFA)",
-
-  // Compétitions secondaires
   "2025-08-28": "Début de la Ligue des Champions de l'UEFA",
   "2025-11-11": "Finale de la Ligue des Champions de l'UEFA",
   "2025-09-10": "Début de la Ligue des Champions de la CAF",
@@ -466,18 +306,14 @@ function calculateOccurrencesByMonth(startDate, frequencyType, frequencyValue) {
     let date;
 
     if (frequencyType === "nth-month-day") {
-      // X-ème jour du mois
       date = new Date(year, month, frequencyValue);
-      if (date.getMonth() !== month) continue; // Ignore si X dépasse les jours du mois
+      if (date.getMonth() !== month) continue;
     } else if (frequencyType === "nth-weekday") {
-      // X-ème jour de la semaine
       const weekday = start.getDay();
       date = findNthWeekday(year, month, weekday, frequencyValue);
     } else if (frequencyType === "last-day-of-month") {
-      // Dernier jour du mois
-      date = new Date(year, month + 1, 0); // Le 0 signifie le dernier jour du mois précédent
+      date = new Date(year, month + 1, 0);
     } else if (frequencyType === "last-weekday") {
-      // Dernier lundi, mardi... du mois
       const weekday = start.getDay();
       date = findLastWeekday(year, month, weekday);
     }
@@ -492,33 +328,33 @@ function calculateOccurrencesByMonth(startDate, frequencyType, frequencyValue) {
 
 function findLastWeekday(year, month, weekday) {
   for (let day = 31; day >= 1; day--) {
-    const date = new Date(year, month, day);
-    if (date.getMonth() !== month) continue; // Ignore les dates hors du mois
+    const date 
+ = new Date(year, month, day);
+    if (date.getMonth() !== month) continue;
     if (date.getDay() === weekday) {
       return date;
     }
   }
-  return null; // Pas trouvé
+  return null;
 }
 
 function findNthWeekday(year, month, weekday, nth) {
   let count = 0;
   for (let day = 1; day <= 31; day++) {
     const date = new Date(year, month, day);
-    if (date.getMonth() !== month) break; // Fin du mois
+    if (date.getMonth() !== month) break;
     if (date.getDay() === weekday) {
       count++;
       if (count === nth) return date;
     }
   }
-  return null; // Pas de date trouvée
+  return null;
 }
 
 function notifyResponsibles() {
   const today = new Date();
-  const dayInMillis = 24 * 60 * 60 * 1000; // One day in milliseconds
+  const dayInMillis = 24 * 60 * 60 * 1000;
 
-  // Iterate through each date in userCustomDays
   for (const [date, details] of Object.entries(userCustomDays)) {
     const eventDate = new Date(date);
     const diffDays = Math.ceil((eventDate - today) / dayInMillis);
@@ -532,7 +368,6 @@ function notifyResponsibles() {
       message = `Bonjour, votre événement "${details.description}" est prévu demain (${date}). Êtes-vous prêt(e) ?`;
     }
 
-    // Send WhatsApp notifications if applicable
     if (message) {
       if (details.responsible1)
         sendWhatsAppNotification(details.responsible1, message);
@@ -547,7 +382,6 @@ function sendWhatsAppNotification(phone, message) {
   window.open(url, "_blank");
 }
 
-// Bind the notification function to the button
 $("#notify-responsibles").on("click", function () {
   notifyResponsibles();
 });
@@ -555,8 +389,8 @@ $("#notify-responsibles").on("click", function () {
 function calculateOccurrencesByWeeks(startDate, frequencyInWeeks) {
   const occurrences = [];
   const start = new Date(startDate);
-  const dayInMillis = 7 * 24 * 60 * 60 * 1000; // Une semaine en millisecondes
-  const maxOccurrences = 57; // Limite à une année complète
+  const dayInMillis = 7 * 24 * 60 * 60 * 1000;
+  const maxOccurrences = 57;
 
   for (let i = 0; i < maxOccurrences; i += parseInt(frequencyInWeeks, 10)) {
     const nextDate = new Date(start.getTime() + i * dayInMillis);
@@ -619,17 +453,19 @@ function removeCustomEvent(date) {
 }
 
 function getTooltip(date) {
-  let tooltip = [];
+  let tooltipe = [];
+
   for (const [category, events] of Object.entries(eventCategories)) {
     if (events[date]) {
       const description =
         typeof events[date] === "object"
           ? events[date].description
           : events[date];
-      tooltip.push(description);
+      tooltipe.push(description);
     }
   }
-  return tooltip.length > 0 ? tooltip.join(" | ") : null;
+
+  return tooltipe.length > 0 ? tooltipe.join(" | ") : null;
 }
 
 function createCalendar(year, month) {
@@ -660,9 +496,8 @@ function createCalendar(year, month) {
       currentDay
     ).padStart(2, "0")}`;
     let dayClasses = [];
-    let tooltip = getTooltip(dateStr);
+    let tooltipe = getTooltip(dateStr);
 
-    // Ajouter des classes selon les événements
     if (holidays[dateStr]) dayClasses.push("holiday");
     if (optimalDays[dateStr]) dayClasses.push("optimal");
     if (worldDays[dateStr]) dayClasses.push("world-day");
@@ -676,8 +511,8 @@ function createCalendar(year, month) {
     const dayElement = $(
       `<div class="${dayClasses.join(" ")}">${currentDay}</div>`
     );
-    if (tooltip) {
-      dayElement.append(`<div class="tooltip">${tooltip}</div>`);
+    if (tooltipe) {
+      dayElement.append(`<div class="tooltipe">${tooltipe}</div>`);
     }
     days.append(dayElement);
     currentDay++;
@@ -734,12 +569,11 @@ const legend = [
   { color: "green", label: "Fêtes Nationales Camerounaises" },
   { color: "orange", label: "Fêtes Lyonnaises" },
   { color: "brown", label: "Journées Culturelles" },
-  { color: "purple", label: "Journées Africaines" },
+  { color: "purple", label: "Journées Afr icaines" },
   { color: "darkblue", label: "Compétitions Sportives" },
   { color: "hotpink", label: "Événements de l'association" },
 ];
 
-// Preserve the original datasets
 const originalEvents = {
   holidays: { ...holidays },
   optimalDays: { ...optimalDays },
@@ -777,7 +611,6 @@ function filterEvents(eventTypes) {
     userCustomDays: {},
   };
 
-  // Filter only the selected event types
   eventTypes.forEach((type) => {
     filtered[type] = { ...originalEvents[type] };
   });
@@ -788,7 +621,6 @@ function filterEvents(eventTypes) {
 function updateCalendar() {
   const filteredEvents = filterEvents(selectedEventTypes);
 
-  // Update the global event variables
   holidays = filteredEvents.holidays;
   optimalDays = filteredEvents.optimalDays;
   worldDays = filteredEvents.worldDays;
@@ -799,7 +631,6 @@ function updateCalendar() {
   sportsDays = filteredEvents.sportsDays;
   userCustomDays = filteredEvents.userCustomDays;
 
-  // Re-generate the calendars
   generateCalendars();
 }
 
@@ -814,7 +645,6 @@ $("#apply-filters").on("click", function () {
 });
 
 $(document).ready(function () {
-  // Ajouter un événement personnalisé
   $("#add-custom-event").on("click", function () {
     const date = $("#custom-event-date").val();
     const description = $("#custom-event-description").val();
@@ -822,6 +652,21 @@ $(document).ready(function () {
     const frequencyValue = $("#custom-event-frequency").val();
     const responsible1 = $("#responsible1-phone").val();
     const responsible2 = $("#responsible2-phone").val();
+	
+	  const phoneRegex = /^\+?[1-9]\d{1,14}$/;
+	  if (responsible1) {
+		if (!phoneRegex.test(responsible1)) {
+		  alert("Veuillez entrer des numéros de téléphone valides.");
+		  return;
+		}
+	  }
+	  
+	  if (responsible2) {
+		if (!phoneRegex.test(responsible2)) {
+		  alert("Veuillez entrer des numéros de téléphone valides.");
+		  return;
+		}
+	  }
 
     if (date && description && frequencyType) {
       addCustomEvent(
@@ -837,7 +682,6 @@ $(document).ready(function () {
     }
   });
 
-  // Supprimer un événement personnalisé
   $("#custom-events-list").on("click", ".delete-custom-event", function () {
     const date = $(this).data("date");
     removeCustomEvent(date);
@@ -856,7 +700,6 @@ $(document).ready(function () {
       userCustomDays: {},
     };
 
-    // Group custom events
     for (const [date, details] of Object.entries(userCustomDays)) {
       const groupKey = details.description;
 
@@ -865,14 +708,13 @@ $(document).ready(function () {
           description: details.description,
           frequencyType: details.frequencyType || null,
           frequencyValue: details.frequencyValue || 1,
-          startDate: date, // Use the first occurrence as the start date
+          startDate: date,
           occurrences: [],
           responsible1: details.responsible1 || null,
           responsible2: details.responsible2 || null,
         };
       }
 
-      // Add occurrences
       data.userCustomDays[groupKey].occurrences.push(date);
     }
 
@@ -906,7 +748,7 @@ $(document).ready(function () {
     return requiredKeys.every((key) => key in data);
   }
 
-  $("#file-input").on("change", function (event) {
+  $("#file-input"). on("change", function (event) {
     const file = event.target.files[0];
     if (file) {
       const reader = new FileReader();
@@ -992,7 +834,10 @@ $("#print-pdf").on("click", function () {
   });
 
   y += 10;
-  html2canvas(document.querySelector(".calendar-container")).then((canvas) => {
+  html2canvas(document.querySelector(".calendar-container"), {
+  scale: 0.8
+})
+  .then((canvas) => {
     const imgData = canvas.toDataURL("image/png");
     const pdfWidth = doc.internal.pageSize.getWidth();
     const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
@@ -1026,7 +871,9 @@ $("#print-pdf").on("click", function () {
   color: #444;
   margin-bottom: 20px;
 }
-
+.white-text {
+  color: white; /* Changez la couleur selon vos besoins */
+}
 #readme h3 {
   font-size: 18px;
   margin-top: 20px;
@@ -1054,8 +901,7 @@ $("#print-pdf").on("click", function () {
 }
 
 #readme li {
-  margin: 5px 0;
-}
+  margin: 5px 0 }
 
 #readme a {
   color: #0066cc;
@@ -1149,7 +995,14 @@ body {
   color: white;
 }
 
-.tooltip {
+.hotpink {
+  background-color: hotpink;
+}
+.darkblue {
+  background-color: darkblue;
+}
+
+.tooltipe {
   display: none;
   position: absolute;
   top: -30px;
@@ -1163,7 +1016,7 @@ body {
   white-space: nowrap;
 }
 
-.days div:hover .tooltip {
+.days div:hover .tooltipe {
   display: block;
 }
 
@@ -1207,6 +1060,7 @@ body {
   margin-right: 10px;
   border-radius: 3px;
 }
+
 @media (max-width: 768px) {
   .calendar-container {
     flex-direction: column;
@@ -1217,6 +1071,7 @@ body {
     width: 100%;
     max-width: 300px;
   }
+  
   #custom-event-form input,
   #custom-event-form select,
   #custom-event-form button {
@@ -1227,6 +1082,7 @@ body {
     font-size: 14px;
   }
 }
+
 #event-filter-form {
   display: flex;
   flex-wrap: wrap;
@@ -1247,6 +1103,7 @@ body {
   font-size: 14px;
   cursor: pointer;
 }
+
 .custom-events-container {
   margin: 30px auto;
   padding: 20px;
@@ -1277,7 +1134,7 @@ body {
 #custom-event-form select,
 #custom-event-form button {
   flex: 1 1 calc(50% - 10px);
-  padding: 10px;
+  padding : 10px;
   font-size: 14px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -1291,7 +1148,6 @@ body {
 #custom-event-form input:focus,
 #custom-event-form select:focus,
 #custom-event-form button:focus {
-  border-color: #007bff;
   outline: none;
 }
 
@@ -1343,4 +1199,6 @@ body {
 #custom-events-list li button:hover {
   background-color: #c82333;
 }
+
+
 </style>

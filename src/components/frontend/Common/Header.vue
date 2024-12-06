@@ -60,8 +60,8 @@
                     v-for="(child, childIndex) in item.children"
                     :key="childIndex"
                   >
-                    <a 
-                      :href="child.href" 
+                    <a
+                      :href="child.href"
                       class="dropdown-link"
                       @click.prevent="scrollToSection(child.href)"
                     >
@@ -192,7 +192,7 @@ export default {
     window.addEventListener("scroll", this.handleScroll);
     window.addEventListener("scroll", this.updateActiveSection);
     this.handleScroll();
-    
+
     // Set initial active section based on URL hash
     const hash = window.location.hash;
     if (hash) {
@@ -212,24 +212,25 @@ export default {
     },
     scrollToSection(href) {
       // Handle special case for /calendrier route
-      if (href === '/calendrier') {
-        this.$router.push('/calendrier');
+      if (href === "/calendrier") {
+        this.$router.push("/calendrier");
         return;
       }
 
-      const elementId = href.replace('#', '');
+      const elementId = href.replace("#", "");
       const element = document.getElementById(elementId);
-      
+
       if (element) {
         const headerOffset = 80; // Height of fixed header
         const elementPosition = element.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        const offsetPosition =
+          elementPosition + window.pageYOffset - headerOffset;
 
         window.scrollTo({
           top: offsetPosition,
-          behavior: 'smooth'
+          behavior: "smooth",
         });
-        
+
         this.activeSection = href;
         if (this.isMenuOpen) {
           this.toggleMenu();
@@ -237,12 +238,12 @@ export default {
       }
     },
     updateActiveSection() {
-      const sections = this.menuItems.map(item => item.href.replace('#', ''));
+      const sections = this.menuItems.map((item) => item.href.replace("#", ""));
       const headerOffset = 100; // Adjust based on your header height
 
       for (const section of sections) {
-        if (section === 'calendrier') continue;
-        
+        if (section === "calendrier") continue;
+
         const element = document.getElementById(section);
         if (element) {
           const rect = element.getBoundingClientRect();
@@ -284,16 +285,6 @@ export default {
   },
 };
 </script>
-
-
-
-
-
-
-
-
-
-
 
 <style scoped>
 body {
