@@ -2,7 +2,11 @@
   <section id="about" class="about section">
     <div class="container">
       <div class="row gy-4">
-        <div class="col-lg-6 position-relative" data-aos="fade-up" data-aos-delay="100">
+        <div
+          class="col-lg-6 position-relative"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
           <div class="d-flex flex-column align-items-center mb-4">
             <h3>À propos</h3>
             <div class="title-underline d-flex justify-content-center">
@@ -18,7 +22,7 @@
           <div v-if="showVideo" class="video-overlay">
             <div class="video-container">
               <video controls>
-                <source src="/assets/img/video/Pink.mp4" type="video/mp4">
+                <source src="/assets/img/video/Pink.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
               <button class="close-btn" @click="showVideo = false">
@@ -41,13 +45,18 @@
             >
               Qui sommes-nous ?
             </h4>
-            <p 
+            <p
               class="text-justify hover-text"
               @mouseover="isHovered = true"
               @mouseleave="isHovered = false"
               :class="{ 'text-hovered': isHovered }"
             >
-              L'Association des Étudiants de la Jeunesse Culturelle (A.E.J.C) est une organisation dynamique dédiée à l'épanouissement des jeunes. Fondée sur des valeurs d'éducation et d'engagement social, elle vise à développer les compétences des étudiants tout en favorisant leur implication dans des projets culturels et communautaires enrichissants.
+              L'Association des Étudiants de la Jeunesse Culturelle (AEJCLyon)
+              est une organisation dynamique dédiée à l'épanouissement des
+              jeunes. Fondée sur des valeurs d'éducation et d'engagement social,
+              elle vise à développer les compétences des étudiants tout en
+              favorisant leur implication dans des projets culturels et
+              communautaires enrichissants.
             </p>
           </div>
           <ul class="list-unstyled">
@@ -56,7 +65,9 @@
               <div>
                 <h5 class="text-success">Cohésion & solidarité</h5>
                 <p class="text-justify">
-                  L'AEJC renforce la solidarité entre les Camerounais de Lyon en valorisant l'entraide et les échanges. Chaque membre est mis en avant pour consolider le sentiment d’appartenance.
+                  L'AEJCLyon renforce la solidarité entre les Camerounais de
+                  Lyon en valorisant l'entraide et les échanges. Chaque membre
+                  est mis en avant pour consolider le sentiment d’appartenance.
                 </p>
               </div>
             </li>
@@ -65,7 +76,10 @@
               <div>
                 <h5 class="text-success">Intégration et entrepreneuriat</h5>
                 <p class="text-justify">
-                  L'AEJC accompagne les jeunes Camerounais dans leur intégration sociale et professionnelle à Lyon. Elle soutient aussi les projets collaboratifs avec ses partenaires pour encourager l’entrepreneuriat.
+                  L'AEJCLyon accompagne les jeunes Camerounais dans leur
+                  intégration sociale et professionnelle à Lyon. Elle soutient
+                  aussi les projets collaboratifs avec ses partenaires pour
+                  encourager l’entrepreneuriat.
                 </p>
               </div>
             </li>
@@ -74,7 +88,9 @@
               <div>
                 <h5 class="text-success">Activités culturelles & caritative</h5>
                 <p class="text-justify">
-                  L'AEJC promeut la culture camerounaise à travers des événements en région lyonnaise. Elle mène également des actions caritatives avec ses amis et soutiens.
+                  L'AEJCLyon promeut la culture camerounaise à travers des
+                  événements en région lyonnaise. Elle mène également des
+                  actions caritatives avec ses amis et soutiens.
                 </p>
               </div>
             </li>
@@ -92,7 +108,7 @@ export default {
     return {
       showVideo: false,
       toggleWhoWeAre: false,
-      isHovered: false
+      isHovered: false,
     };
   },
 };

@@ -3,20 +3,24 @@
     <div class="container mx-auto px-4 md:px-6">
       <div class="relative partner-scroll-wrapper">
         <div class="scroll-container">
-          <div v-for="n in 2" :key="n" class="d-flex align-items-center space-x-6 md:space-x-12 animate-scroll">
-            <div 
-              v-for="(partner, index) in partners" 
-              :key="`${n}-${index}`" 
+          <div
+            v-for="n in 2"
+            :key="n"
+            class="d-flex align-items-center space-x-6 md:space-x-12 animate-scroll"
+          >
+            <div
+              v-for="(partner, index) in partners"
+              :key="`${n}-${index}`"
               class="partner-item"
             >
               <div class="partner-circle">
                 <div class="partner-image-wrapper">
-                  <img 
-                    :src="partner.logo" 
-                    :alt="`Logo ${index + 1}`" 
+                  <img
+                    :src="partner.logo"
+                    :alt="`Logo ${index + 1}`"
                     class="partner-image"
                     loading="lazy"
-                  >
+                  />
                 </div>
               </div>
             </div>
@@ -29,20 +33,23 @@
 
 <script>
 export default {
-  name: 'PartnersCarousel',
+  name: "PartnersCarousel",
   data() {
     return {
       partners: [
-        { logo: '/assets/img/partenaires/1.jpg' },
-        { logo: '/assets/img/partenaires/2.jpg' },
-        { logo: '/assets/img/partenaires/3.jpg' },
-        { logo: '/assets/img/partenaires/4.jpg' },
-        { logo: '/assets/img/partenaires/5.png' },
-        { logo: '/assets/img/partenaires/6.jpg' }
-      ]
-    }
-  }
-}
+        { logo: "/assets/img/partenaires/1.jpg" },
+        { logo: "/assets/img/partenaires/2.jpg" },
+        { logo: "/assets/img/partenaires/3.jpg" },
+        { logo: "/assets/img/partenaires/4.jpg" },
+        { logo: "/assets/img/partenaires/5.png" },
+        { logo: "/assets/img/partenaires/6.jpg" },
+        { logo: "/assets/img/partenaires/7.jpg" },
+        { logo: "/assets/img/partenaires/8.jpg" },
+        { logo: "/assets/img/partenaires/9.jpg" },
+      ],
+    };
+  },
+};
 </script>
 
 <style scoped>
@@ -137,7 +144,7 @@ export default {
     width: 100px;
     height: 100px;
   }
-  
+
   .animate-scroll {
     animation-duration: 20s;
   }
