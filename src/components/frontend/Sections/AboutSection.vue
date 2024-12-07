@@ -79,7 +79,12 @@
                   L'AEJCLyon accompagne les jeunes Camerounais dans leur
                   intégration sociale et professionnelle à Lyon. Elle soutient
                   aussi les projets collaboratifs avec ses partenaires pour
-                  encourager l’entrepreneuriat.
+                  encourager l’entrepreneuriat. Le conseil d'administration
+                  actuel de l'association est composé des membres suivants :
+                  Hervé Badjeck, président; Chanceline Essenmene, secrétaire
+                  générale; et Doric Ngouffo, responsable de la communication.
+                  Pour plus de détails sur la composition de l'équipe, consultez
+                  la section Equipe.
                 </p>
               </div>
             </li>
