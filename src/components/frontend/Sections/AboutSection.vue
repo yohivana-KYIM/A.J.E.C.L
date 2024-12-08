@@ -56,14 +56,12 @@
               jeunes. Fondée sur des valeurs d'éducation et d'engagement social,
               elle vise à développer les compétences des étudiants tout en
               favorisant leur implication dans des projets culturels et
-              communautaires enrichissants.
-              <a href="#team"
-                >Le conseil d'administration actuel de l'association est composé
-                des membres suivants : Hervé Badjeck, président; Chanceline
-                Essenmene, secrétaire générale; et Doric Ngouffo, responsable de
-                la communication. Pour plus de détails sur la composition de
-                l'équipe, consultez la section Equipe.</a
-              >
+              communautaires enrichissants. Le conseil d'administration actuel
+              de l'association est composé des membres suivants : Hervé Badjeck,
+              président; Chanceline Essenmene, secrétaire générale; et Doric
+              Ngouffo, responsable de la communication. Pour plus de détails sur
+              la composition de l'équipe.
+              <a href="#team">consultez la section Equipe.</a>
             </p>
           </div>
           <ul class="list-unstyled">
