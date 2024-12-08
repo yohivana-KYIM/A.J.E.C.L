@@ -51,7 +51,7 @@
               @mouseleave="isHovered = false"
               :class="{ 'text-hovered': isHovered }"
             >
-              L'Association des Étudiants de la Jeunesse Culturelle (AEJCLyon)
+              L'Association des Etudiants et Jeunes Camerounais de Lyon (AEJCLyon)
               est une organisation dynamique dédiée à l'épanouissement des
               jeunes. Fondée sur des valeurs d'éducation et d'engagement social,
               elle vise à développer les compétences des étudiants tout en
