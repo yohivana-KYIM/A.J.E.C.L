@@ -108,7 +108,7 @@ export default {
         image: "/assets/img/team/team-2.jpg",
       },
       {
-        name: "Roméo KUITJDEM",
+        name: "Roméo kamwa kamdem",
         position: "Chargé des relations extérieures",
         image: "/assets/img/team/team-3.jpg",
       },
