@@ -47,9 +47,7 @@
             </h4>
             <p
               class="text-justify hover-text"
-              @mouseover="isHovered = true"
-              @mouseleave="isHovered = false"
-              :class="{ 'text-hovered': isHovered }"
+             
             >
               L'Association des Etudiants et Jeunes Camerounais de Lyon (AEJCLyon)
               est une organisation dynamique dédiée à l'épanouissement des
