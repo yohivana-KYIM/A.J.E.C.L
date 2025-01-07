@@ -103,7 +103,7 @@ export default {
         image: "/assets/img/team/team-1.jpg",
       },
       {
-        name: "Chanceline ESSENMENE",
+        name: "Chanceline ESSEMNENE",
         position: "Secrétaire générale",
         image: "/assets/img/team/team-2.jpg",
       },

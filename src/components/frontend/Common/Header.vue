@@ -184,7 +184,7 @@ export default {
         { label: "Evenements", href: "#portfolio" },
         { label: "Équipe", href: "#team" },
         { label: "Contact", href: "#contact" },
-        { label: "Calendrier des activités", href: "/calendrier" },
+        { label: "Calendrier des activités", href: "https://aejcevents.netlify.app/" },
       ],
     };
   },
