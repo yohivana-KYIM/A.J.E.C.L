@@ -177,15 +177,16 @@ export default {
       openDropdowns: [],
       openMobileDropdowns: [],
       lastScrollPosition: 0,
-      menuItems: [
-        { label: "Accueil", href: "#hero" },
-        { label: "À propos", href: "#about" },
-        { label: "Services", href: "#services" },
-        { label: "Evenements", href: "#portfolio" },
-        { label: "Équipe", href: "#team" },
-        { label: "Contact", href: "#contact" },
-        { label: "Calendrier des activités", href: "https://aejcevents.netlify.app/" },
-      ],
+    menuItems: [
+  { label: "Accueil", href: "#hero" },
+  { label: "À propos", href: "#about" },
+  { label: "Services", href: "#services" },
+  { label: "Evenements", href: "#portfolio" },
+  { label: "Équipe", href: "#team" },
+  { label: "Contact", href: "#contact" },
+  { label: "Calendrier des activités", href: "https://aejcevents.netlify.app/" }, // Lien vers le calendrier
+],
+
     };
   },
   mounted() {

@@ -217,7 +217,7 @@ export default {
         Équipe: "/#team",
 
         Contact: "/#contact",
-        "Calendrier des activités": "/https://aejcevents.netlify.app/",
+     "Calendrier des activités": "https://aejcevents.netlify.app/", 
         statut:
           "https://drive.google.com/file/d/1CNjUcIt8gNUpGO2dVpquLGAKKfsNCSXM/view?usp=drivesdk",
         "le règlement intérieur":
