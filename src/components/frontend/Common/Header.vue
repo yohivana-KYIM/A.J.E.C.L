@@ -1,7 +1,5 @@
-// Header.vue
 <template>
   <header :class="['main-header', { scrolled: isScrolled }]">
-    <!-- Le reste du template reste identique à votre code original -->
     <div class="header-container">
       <div class="logo-container">
         <a href="/" class="logo-link">
@@ -177,16 +175,15 @@ export default {
       openDropdowns: [],
       openMobileDropdowns: [],
       lastScrollPosition: 0,
-    menuItems: [
-  { label: "Accueil", href: "#hero" },
-  { label: "À propos", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Evenements", href: "#portfolio" },
-  { label: "Équipe", href: "#team" },
-  { label: "Contact", href: "#contact" },
-  { label: "Calendrier des activités", href: "https://aejcevents.netlify.app/" }, // Lien vers le calendrier
-],
-
+      menuItems: [
+        { label: "Accueil", href: "#hero" },
+        { label: "À propos", href: "#about" },
+        { label: "Services", href: "#services" },
+        { label: "Evenements", href: "#portfolio" },
+        { label: "Équipe", href: "#team" },
+        { label: "Contact", href: "#contact" },
+        { label: "Calendrier des activités", href: "https://aejcevents.netlify.app/" },
+      ],
     };
   },
   mounted() {
@@ -213,8 +210,8 @@ export default {
     },
     scrollToSection(href) {
       // Handle special case for /calendrier route
-      if (href === "/calendrier") {
-        this.$router.push("/calendrier");
+      if (href === "https://aejcevents.netlify.app/") {
+        window.location.href = href;  // Redirect to external link
         return;
       }
 
@@ -286,7 +283,6 @@ export default {
   },
 };
 </script>
-
 <style scoped>
 body {
   padding-top: 80px;
